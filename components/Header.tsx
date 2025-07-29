@@ -62,18 +62,21 @@ const Header = () => {
         isScrolled ? 'bg-white shadow-lg' : 'bg-white'
       }`}>
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-[#007B8A] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">FN</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900 leading-tight">
-                The Florence Nightingale
-              </h1>
-              <p className="text-sm text-[#007B8A] font-medium">Home Care Agency</p>
-            </div>
-          </Link>
+  {/* Logo */}
+  <Link href="/" className="flex items-end space-x-1">
+    <div className="w-16 h-16 rounded-full overflow-hidden">
+      <img src="/logo/loh.png" alt="Logo" className="w-full h-full object-cover" />
+    </div>
+    <div>
+      <h1 className="text-xl font-bold text-gray-900 leading-tight">
+        The Florence Nightingale
+      </h1>
+      <p className="text-sm text-[#007B8A] font-medium">Home Care Agency</p>
+    </div>
+  </Link>
+
+
+
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-8">

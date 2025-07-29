@@ -12,35 +12,38 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <span className="text-[#007B8A] font-bold text-xl">FN</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold leading-tight">
-                  The Florence Nightingale
-                </h3>
-                <p className="text-sm text-[#A2E3E2] font-medium">Home Care Agency</p>
-              </div>
-            </Link>
-            <p className="text-[#A2E3E2] text-sm leading-relaxed">
-              Providing compassionate, professional home care services in Indore with a commitment to dignity, independence, and quality of life for every individual we serve.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-[#A2E3E2] hover:text-white transition-colors duration-200">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-[#A2E3E2] hover:text-white transition-colors duration-200">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-[#A2E3E2] hover:text-white transition-colors duration-200">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-[#A2E3E2] hover:text-white transition-colors duration-200">
-                <Linkedin size={20} />
-              </a>
-            </div>
-          </div>
+  <Link href="/" className="flex items-end space-x-3">
+    <div className="w-12 h-12 rounded-full overflow-hidden bg-white">
+      <img src="/logo/loh.png" alt="Logo" className="w-full h-full object-cover" />
+    </div>
+    <div>
+      <h3 className="text-lg font-bold leading-tight text-white">
+        The Florence Nightingale
+      </h3>
+      <p className="text-sm text-[#A2E3E2] font-medium">Home Care Agency</p>
+    </div>
+  </Link>
+
+  <p className="text-[#A2E3E2] text-sm leading-relaxed">
+    Providing compassionate, professional home care services in Indore with a commitment to dignity, independence, and quality of life for every individual we serve.
+  </p>
+
+  <div className="flex space-x-4">
+    <a href="#" className="text-[#A2E3E2] hover:text-white transition-colors duration-200">
+      <Facebook size={20} />
+    </a>
+    <a href="#" className="text-[#A2E3E2] hover:text-white transition-colors duration-200">
+      <Twitter size={20} />
+    </a>
+    <a href="#" className="text-[#A2E3E2] hover:text-white transition-colors duration-200">
+      <Instagram size={20} />
+    </a>
+    <a href="#" className="text-[#A2E3E2] hover:text-white transition-colors duration-200">
+      <Linkedin size={20} />
+    </a>
+  </div>
+</div>
+
 
           {/* Quick Links */}
           <div className="space-y-4">

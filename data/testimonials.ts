@@ -1,74 +1,85 @@
-export interface Blog {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string; // Keep as HTML string for dangerouslySetInnerHTML
-  author: string;
-  authorAvatar: string;
-  date: string;
-  readTime: string;
-  image: string;
-  category: string;
-  tags: string[];
+export interface Testimonial {
+  id: number;
+  name: string;
+  relationship: string;
+  avatar: string;
+  rating: number;
+  content: string;
 }
 
-export const blogs: Blog[] = [
+const allTestimonials: Testimonial[] = [
   {
-    id: "benefits-of-home-care",
-    title: "10 Benefits of Choosing Home Care Over Nursing Homes",
-    authorAvatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    excerpt: "Discover why home care is becoming the preferred choice for families seeking quality care for their loved ones.",
-    content: `... (HTML content remains the same) ...`,
-    author: "Dr. Sarah Johnson",
-    date: "2024-07-25",
-    readTime: "8 min read",
-    image: "https://images.pexels.com/photos/7551428/pexels-photo-7551428.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    category: "Home Care",
-    tags: ["home care", "nursing homes", "elderly care"]
+    id: 1,
+    name: "The Sharma Family",
+    relationship: "Daughter of Client",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    rating: 5,
+    content: "The care and compassion shown to my mother were exceptional. The caregiver became like a part of our family. We are so grateful for the peace of mind you've given us."
   },
   {
-    id: "dementia-care-tips",
-    title: "Effective Communication Strategies for Dementia Care",
-    authorAvatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    excerpt: "Learn how to improve communication with a loved one living with dementia, fostering a more positive and supportive environment.",
-    content: `<p>Communicating with a person who has dementia requires patience, understanding, and creativity. As the disease progresses, their ability to process language and express themselves changes. Here are some effective strategies...</p><h2>1. Be Patient and Positive</h2><p>Speak slowly and calmly. Use a gentle, reassuring tone. If you get frustrated, take a deep breath and pause. Your body language and attitude communicate more than your words.</p>`,
-    author: "Mark Williams",
-    date: "2024-07-18",
-    readTime: "6 min read",
-    image: "https://images.pexels.com/photos/7551544/pexels-photo-7551544.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    category: "Dementia Care",
-    tags: ["dementia", "communication", "caregiving"]
+    id: 2,
+    name: "Rajesh Kumar",
+    relationship: "Son of Client",
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    rating: 5,
+    content: "Finding reliable dementia care for my father was a struggle until we found this service. The specialized care plan made a huge difference in his daily life and happiness."
   },
   {
-    id: "post-operative-recovery",
-    title: "A Guide to Safe and Speedy Post-Operative Recovery at Home",
-    authorAvatar: "https://randomuser.me/api/portraits/women/50.jpg",
-    excerpt: "Recovering from surgery at home can be challenging. Follow these essential tips to ensure a smooth and safe healing process.",
-    content: `<p>After surgery, the comfort of home is often the best place to recover. However, it's crucial to create a safe environment and follow medical advice strictly. This guide provides key steps for a successful post-operative recovery at home...</p><h2>1. Prepare Your Home</h2><p>Before leaving the hospital, prepare your home. This includes setting up a comfortable recovery space, removing tripping hazards, and having necessary supplies on hand.</p>`,
-    author: "Priya Malhotra, RN",
-    date: "2024-07-10",
-    readTime: "7 min read",
-    image: "https://images.pexels.com/photos/7579319/pexels-photo-7579319.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    category: "Recovery Care",
-    tags: ["surgery", "recovery", "post-op", "nursing"]
+    id: 3,
+    name: "Anita Desai",
+    relationship: "Client",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    rating: 5,
+    content: "After my surgery, the post-operative care I received at home was fantastic. The nurse was professional, attentive, and helped me recover much faster than I expected."
   },
   {
-    id: "newborn-mother-care-guide",
-    title: "Essential Care Tips for Newborns and Postpartum Mothers",
-    authorAvatar: "https://randomuser.me/api/portraits/women/55.jpg",
-    excerpt: "Navigating the first few weeks with a newborn can be overwhelming. Here are essential tips for caring for your baby and yourself.",
-    content: `<p>The postpartum period is a time of great joy and significant adjustment. Proper care for both the newborn and the mother is crucial for a healthy start. Our expert nurses have compiled these essential tips...</p><h2>1. Umbilical Cord Care</h2><p>Keeping the umbilical cord stump clean and dry is vital to prevent infection. Fold the diaper down to expose the stump to air until it falls off naturally.</p>`,
-    author: "Anjali Desai",
-    date: "2024-06-28",
-    readTime: "9 min read",
-    image: "/services/1.jpg",
-    category: "Newborn Care",
-    tags: ["newborn", "postpartum", "motherhood"]
+    id: 4,
+    name: "Prakash Singh",
+    relationship: "Husband of Client",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    rating: 4,
+    content: "Excellent respite care service. It gave me a much-needed break, and I was confident my wife was in safe and capable hands. Highly recommend."
+  },
+  {
+    id: 5,
+    name: "Sunita Gupta",
+    relationship: "Niece of Client",
+    avatar: "https://randomuser.me/api/portraits/women/50.jpg",
+    rating: 5,
+    content: "Their companionship service has been a lifeline for my aunt. She looks forward to the visits, and it has greatly improved her mood and overall well-being."
+  },
+  {
+    id: 6,
+    name: "Vikram Mehta",
+    relationship: "Grandson of Client",
+    avatar: "https://randomuser.me/api/portraits/men/55.jpg",
+    rating: 5,
+    content: "The caregivers are not just skilled but also incredibly kind and patient. They treat my grandfather with the utmost respect and dignity. A truly five-star service."
+  },
+    {
+    id: 7,
+    name: "The Reddy Family",
+    relationship: "Family of Client",
+    avatar: "https://randomuser.me/api/portraits/women/58.jpg",
+    rating: 5,
+    content: "From the initial consultation to the daily care, every step has been professional and reassuring. This is the best home care service we've ever used."
+  },
+  {
+    id: 8,
+    name: "Imran Khan",
+    relationship: "Friend of Client",
+    avatar: "https://randomuser.me/api/portraits/men/60.jpg",
+    rating: 4,
+    content: "I arranged for their services for a close friend. The team was responsive, flexible, and provided excellent care that was tailored to his specific needs."
   }
 ];
 
-export const getBlogById = (id: string): Blog | undefined => {
-  return blogs.find(blog => blog.id === id);
+// This is the missing function that your component needs.
+export const getFeaturedTestimonials = (count: number): Testimonial[] => {
+  return allTestimonials.slice(0, count);
 };
 
-// ... other export functions remain the same ...
+// It's also good practice to have a function to get all testimonials.
+export const getAllTestimonials = (): Testimonial[] => {
+    return allTestimonials;
+};

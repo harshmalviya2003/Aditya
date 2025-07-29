@@ -4,33 +4,32 @@ import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight, X, Gift, Bell } from 'lucide-react';
 import Link from 'next/link';
 
+// 1. Define a specific type for the popup keys. This is the core fix.
+type PopupKey = 'first' | 'second';
+
 const TimedPopup = () => {
-  const [visiblePopup, setVisiblePopup] = useState<string | null>(null);
+  // 2. Use the more specific 'PopupKey' type for the state.
+  const [visiblePopup, setVisiblePopup] = useState<PopupKey | null>(null);
 
   useEffect(() => {
-    // Check session storage to see if the popups have already run their course.
     const popupsState = sessionStorage.getItem('popupsShown');
 
     if (popupsState === 'completed') {
-      return; // Do nothing if both popups have been triggered.
+      return;
     }
 
-    // Timer for the first popup (1 minute = 60000 ms)
     const firstPopupTimer = setTimeout(() => {
-      // Show the first popup only if it hasn't been shown before
       if (sessionStorage.getItem('popupsShown') !== 'first_shown') {
         setVisiblePopup('first');
         sessionStorage.setItem('popupsShown', 'first_shown');
       }
-    }, 60000);
+    }, 60000); // 1 minute
 
-    // Timer for the second popup (2 minutes = 120000 ms)
     const secondPopupTimer = setTimeout(() => {
       setVisiblePopup('second');
-      sessionStorage.setItem('popupsShown', 'completed'); // Mark sequence as complete
-    }, 120000);
+      sessionStorage.setItem('popupsShown', 'completed');
+    }, 120000); // 2 minutes
 
-    // Cleanup timers if the component unmounts
     return () => {
       clearTimeout(firstPopupTimer);
       clearTimeout(secondPopupTimer);
@@ -45,7 +44,7 @@ const TimedPopup = () => {
     return null;
   }
 
-  // Popup Content
+  // The content structure remains the same.
   const popupContent = {
     first: {
       icon: <Bell className="w-9 h-9 text-teal-600" />,
@@ -62,8 +61,24 @@ const TimedPopup = () => {
       buttonLink: "/contact"
     }
   };
-
+  
+  // 3. This access is now type-safe because TypeScript knows 'visiblePopup' must be 'first' or 'second'.
   const currentContent = popupContent[visiblePopup];
+
+  // 4. Create a color mapping to avoid dynamic class name issues with Tailwind CSS.
+  const colorSchemes = {
+    first: {
+      bg: 'bg-teal-100',
+      buttonBg: 'bg-teal-600',
+      buttonHoverBg: 'hover:bg-teal-700'
+    },
+    second: {
+      bg: 'bg-green-100',
+      buttonBg: 'bg-green-600',
+      buttonHoverBg: 'hover:bg-green-700'
+    }
+  };
+  const colors = colorSchemes[visiblePopup];
 
   return (
     <div 
@@ -74,7 +89,7 @@ const TimedPopup = () => {
     >
       <div 
         className="relative bg-white rounded-2xl shadow-2xl p-8 sm:p-10 text-center max-w-md m-4 transform animate-scale-in"
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()} // Added event type for safety
       >
         <button 
           onClick={handleClose} 
@@ -84,7 +99,8 @@ const TimedPopup = () => {
           <X size={24} />
         </button>
         
-        <div className={`w-16 h-16 bg-${visiblePopup === 'first' ? 'teal' : 'green'}-100 rounded-full flex items-center justify-center mx-auto mb-6`}>
+        {/* Use the color from the mapping object */}
+        <div className={`w-16 h-16 ${colors.bg} rounded-full flex items-center justify-center mx-auto mb-6`}>
           {currentContent.icon}
         </div>
         
@@ -99,13 +115,14 @@ const TimedPopup = () => {
         <Link
           href={currentContent.buttonLink}
           onClick={handleClose}
-          className={`inline-flex items-center justify-center w-full bg-${visiblePopup === 'first' ? 'teal-600' : 'green-600'} text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-${visiblePopup === 'first' ? 'teal-700' : 'green-700'} transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5`}
+          // Use the colors from the mapping object, ensuring Tailwind detects them
+          className={`inline-flex items-center justify-center w-full ${colors.buttonBg} text-white px-6 py-3.5 rounded-lg font-semibold ${colors.buttonHoverBg} transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5`}
         >
           {currentContent.buttonText}
           <ArrowRight className="w-5 h-5 ml-2" />
         </Link>
       </div>
-       <style jsx>{`
+      <style jsx>{`
         @keyframes fade-in {
           from { opacity: 0; }
           to { opacity: 1; }

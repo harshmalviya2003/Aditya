@@ -1,104 +1,109 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, {useState } from 'react';
 import { getFeaturedTestimonials } from '@/data/testimonials';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, Heart, Users, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 
 const Testimonials = () => {
-  const testimonials = getFeaturedTestimonials(6);
+  const testimonials = getFeaturedTestimonials(8);
   const [isPaused, setIsPaused] = useState(false);
 
   const renderStars = (rating: number) => {
     return [...Array(5)].map((_, i) => (
       <Star
         key={i}
-        className={`w-3 h-3 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+        className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
       />
     ));
   };
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
-  };
-
   return (
-    <section className="py-16 px-2 bg-[#A2E3E2]/10">
-      <div className="max-w-full mx-auto px-4">
+    <section className="py-20 sm:py-24 bg-slate-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center bg-[#007B8A]/10 px-3 py-1 rounded-full mb-4">
-            <span className="text-sm font-medium text-[#007B8A]">Client Testimonials</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Families Trust <span className="text-[#007B8A]">Our Care</span>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+            What Our Families Say
           </h2>
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            Real stories from families who have trusted us with their loved ones' care.
+          </p>
         </div>
+      </div>
 
-        {/* Marquee Carousel */}
-        <div className="overflow-hidden ">
-          <div
-            className="flex animate-marquee"
-            style={{
-              animation: 'marquee 30s linear infinite',
-              animationPlayState: isPaused ? 'paused' : 'running',
-            }}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {/* Duplicate testimonials for seamless loop */}
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div
-                key={`${testimonial.id}-${index}`}
-                className="flex-shrink-0 w-[280px] mx-2 sm:mx-3 mb-5"
-              >
-                <div className="bg-white p-4 border border-gray-100 shadow-md rounded-lg h-[220px] flex flex-col justify-between">
+      {/* Marquee Container with Fading Edges */}
+      <div className="relative">
+        <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+
+        <div
+          className="flex animate-marquee-slow"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+        >
+          {/* Render testimonials twice for a seamless loop */}
+          {[...testimonials, ...testimonials].map((testimonial, index) => (
+            <div key={`${testimonial.id}-${index}`} className="flex-shrink-0 w-80 sm:w-96 mx-4 py-2">
+              <div className="bg-white rounded-2xl shadow-lg p-6 h-full flex flex-col border border-gray-100 transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                 <Quote className="w-8 h-8 text-[#007B8A] opacity-20 mb-4" />
+                <blockquote className="text-gray-700 italic flex-grow">
+                  "{testimonial.content}"
+                </blockquote>
+                <div className="mt-6 flex items-center">
+                  <Image
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-[#007B8A]/50"
+                  />
                   <div>
-                    <div className="flex justify-center mb-2">
-                      <Quote className="w-6 h-6 text-[#007B8A] opacity-50" />
-                    </div>
-                    <div className="flex justify-center space-x-1 mb-2">
+                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-sm text-[#007B8A] font-medium">{testimonial.relationship}</p>
+                    <div className="flex items-center mt-1">
                       {renderStars(testimonial.rating)}
                     </div>
-                    <blockquote className="text-sm text-gray-700 line-clamp-3">
-                      "{testimonial.content}"
-                    </blockquote>
-                  </div>
-                  <div className="border-t border-[#007B8A]/20 pt-2">
-                    <h4 className="text-sm font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-xs text-[#007B8A]">{testimonial.relationship}</p>
-                    <p className="text-xs text-gray-500">
-                      {testimonial.location} • {formatDate(testimonial.date)}
-                    </p>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Trust Indicators Section */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          <div className="bg-white/60 p-6 rounded-xl border border-gray-200/80">
+            <Heart className="w-10 h-10 text-[#007B8A] mx-auto mb-3" />
+            <div className="text-3xl font-bold text-gray-900">1,200+</div>
+            <p className="text-gray-600">Families Served</p>
+          </div>
+          <div className="bg-white/60 p-6 rounded-xl border border-gray-200/80">
+            <CheckCircle className="w-10 h-10 text-[#007B8A] mx-auto mb-3" />
+            <div className="text-3xl font-bold text-gray-900">98%</div>
+            <p className="text-gray-600">Satisfaction Rate</p>
+          </div>
+          <div className="bg-white/60 p-6 rounded-xl border border-gray-200/80">
+            <Users className="w-10 h-10 text-[#007B8A] mx-auto mb-3" />
+            <div className="text-3xl font-bold text-gray-900">50+</div>
+            <p className="text-gray-600">Certified Caregivers</p>
           </div>
         </div>
-
-        {/* Trust Indicators */}
-       
       </div>
-
-      {/* CSS for Marquee Animation */}
+      
+      {/* CSS for custom marquee animation */}
       <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+        @keyframes marquee-slow {
+          from { transform: translateX(0%); }
+          to { transform: translateX(-50%); }
         }
-        .animate-marquee {
+        .animate-marquee-slow {
           display: flex;
           width: max-content;
-        }
-        @media (max-width: 640px) {
-          .animate-marquee {
-            animation-duration: 20s;
-          }
+          animation: marquee-slow 40s linear infinite;
         }
       `}</style>
     </section>

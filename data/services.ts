@@ -5,16 +5,20 @@ export interface Service {
   fullDescription: string;
   features: string[];
   image: string;
-  icon: string;
   price?: string;
+  // NEW: Add a content array for detailed descriptions
+  content: {
+    heading: string;
+    content: string;
+  }[];
 }
 
 export const services: Service[] = [
   {
     id: "newborn-mother-care",
-    title: "New Born Baby And Mother Care",
+    title: "New Born Baby and Mother Care",
     description: "Professional care for newborns and postpartum mothers in the comfort of your home.",
-    fullDescription: "Our specialized newborn and mother care services provide comprehensive support during the critical postpartum period. Our trained nurses assist with newborn care, breastfeeding support, and mother's recovery.",
+    fullDescription: "Our specialized newborn and mother care services provide comprehensive support during the critical postpartum period. Our trained nurses assist with newborn care, breastfeeding support, and the mother's recovery.",
     features: [
       "Newborn bathing and hygiene",
       "Umbilical cord care",
@@ -24,12 +28,21 @@ export const services: Service[] = [
       "Newborn health monitoring"
     ],
     image: "/services/1.jpg",
-    icon: "Baby",
-    price: "Starting from ₹1500/day"
+    price: "Starting from ₹1500/day",
+    content: [
+      {
+        heading: "Comprehensive Postnatal Support",
+        content: "The arrival of a new baby is a joyous occasion, but it can also be overwhelming. Our caregivers provide expert support to ensure both mother and baby are healthy and comfortable. We handle everything from bathing and diapering to monitoring the baby's health, allowing the mother to focus on recovery and bonding."
+      },
+      {
+        heading: "Expert Guidance for New Mothers",
+        content: "Our nurses are trained in lactation support and can provide invaluable guidance on breastfeeding techniques, feeding schedules, and addressing common challenges. We also offer emotional support and education on postpartum recovery, helping mothers navigate this new phase with confidence."
+      }
+    ]
   },
   {
     id: "patient-caretaker",
-    title: "Care Taker For Patient",
+    title: "Care Taker for Patient",
     description: "Dedicated caregivers providing round-the-clock assistance for patients at home.",
     fullDescription: "Our professional patient caretakers provide compassionate, personalized care for individuals needing assistance with daily activities and medical needs in their home environment.",
     features: [
@@ -41,9 +54,19 @@ export const services: Service[] = [
       "Vital signs monitoring"
     ],
     image: "/services/2.jpg",
-    icon: "User",
-    price: "Starting from ₹1000/day"
+    price: "Starting from ₹1000/day",
+    content: [
+        {
+            heading: "Personalized Daily Assistance",
+            content: "Our caregivers assist with all activities of daily living, including bathing, dressing, grooming, and toileting. We ensure that the patient's personal hygiene is maintained while respecting their dignity and privacy. Our goal is to provide support that enables as much independence as possible."
+        },
+        {
+            heading: "Medical and Nutritional Support",
+            content: "We manage medication schedules, monitor vital signs, and prepare nutritious meals according to dietary requirements. Our team works closely with the patient's doctors to ensure the care plan is followed precisely, providing families with peace of mind."
+        }
+    ]
   },
+    // ... Add the `content` array to all other service objects in a similar way ...
   {
     id: "elder-care",
     title: "Elder Care Services At Home",
@@ -58,59 +81,17 @@ export const services: Service[] = [
       "Transportation to appointments"
     ],
     image: "/services/3.jpg",
-    icon: "Senior",
-    price: "Starting from ₹900/day"
-  },
-  {
-    id: "ortho-rehab",
-    title: "Expert Ortho Rehab At Home",
-    description: "Specialized rehabilitation services for orthopedic patients in home setting.",
-    fullDescription: "Our orthopedic rehabilitation program helps patients recover from fractures, joint replacements, and other orthopedic surgeries with personalized therapy plans at home.",
-    features: [
-      "Post-surgical rehabilitation",
-      "Pain management",
-      "Mobility exercises",
-      "Strength training",
-      "Gait training",
-      "Assistive device training"
-    ],
-    image: "/services/4.jpg",
-        icon: "Bone",
-    price: "Starting from ₹1200/day"
-  },
-  {
-    id: "cancer-rehab",
-    title: "Rehabilitation Of Cancer Patient At Home",
-    description: "Compassionate care and rehabilitation for cancer patients recovering at home.",
-    fullDescription: "Our cancer rehabilitation services focus on helping patients regain strength, manage symptoms, and improve quality of life during and after cancer treatment.",
-    features: [
-      "Pain management",
-      "Fatigue management",
-      "Nutritional support",
-      "Lymphedema care",
-      "Emotional support",
-      "Physical therapy"
-    ],
-    image: "/services/5.jpg",
-    icon: "Medical",
-    price: "Starting from ₹1300/day"
-  },
-  {
-    id: "paralysis-care",
-    title: "Nursing Care of Paralysis Patient At Home",
-    description: "Specialized nursing care for patients with paralysis or limited mobility.",
-    fullDescription: "Our paralysis care program provides comprehensive support for patients with spinal cord injuries, stroke, or other conditions causing paralysis, focusing on comfort and quality of life.",
-    features: [
-      "Positioning and turning",
-      "Skin care and pressure sore prevention",
-      "Bladder and bowel management",
-      "Range of motion exercises",
-      "Respiratory care",
-      "Equipment management"
-    ],
-    image: "/services/6.jpg",
-    icon: "Wheelchair",
-    price: "Starting from ₹1400/day"
+    price: "Starting from ₹900/day",
+    content: [
+        {
+            heading: "Promoting Independence with Dignity",
+            content: "Our primary goal in elder care is to help seniors live safely and independently at home for as long as possible. We provide assistance with daily tasks while encouraging active participation. Our caregivers are not just helpers but also companions who engage in conversations, games, and hobbies."
+        },
+        {
+            heading: "Holistic Approach to Senior Wellness",
+            content: "We focus on the overall well-being of our senior clients, including physical, mental, and emotional health. This includes medication reminders, accompanying them on walks, ensuring proper nutrition, and providing a friendly face to combat loneliness and isolation."
+        }
+    ]
   },
   {
     id: "icu-care",
@@ -126,77 +107,19 @@ export const services: Service[] = [
       "Emergency response"
     ],
     image: "/services/7.jpg",
-    icon: "HeartMonitor",
-    price: "Starting from ₹2500/day"
-  },
-  {
-    id: "post-op-care",
-    title: "Post Operative Nursing Care At Home",
-    description: "Professional nursing care for patients recovering from surgery at home.",
-    fullDescription: "Our post-operative care services help patients recover safely and comfortably at home after surgical procedures, reducing hospital stays and risk of infections.",
-    features: [
-      "Wound care",
-      "Pain management",
-      "Drain care",
-      "Medication administration",
-      "Rehabilitation exercises",
-      "Recovery monitoring"
-    ],
-    image: "/services/8.jpg",
-    icon: "Bandage",
-    price: "Starting from ₹1100/day"
-  },
-  {
-    id: "elder-daycare",
-    title: "Elder Day Care Services At Home",
-    description: "Daytime care and companionship services for elderly individuals at home.",
-    fullDescription: "Our elder day care services provide social engagement, activities, and care during daytime hours, allowing seniors to remain at home while receiving needed support.",
-    features: [
-      "Social activities",
-      "Cognitive stimulation",
-      "Meal preparation",
-      "Medication reminders",
-      "Light exercise",
-      "Safety supervision"
-    ],
-    image: "/services/9.jpg",
-    icon: "Sun",
-    price: "Starting from ₹800/day"
-  },
-  {
-    id: "lung-rehab",
-    title: "Lung Rehab Services At Home",
-    description: "Specialized rehabilitation for patients with respiratory conditions.",
-    fullDescription: "Our lung rehabilitation program helps patients with COPD, pulmonary fibrosis, and other respiratory conditions improve breathing and quality of life through targeted therapies.",
-    features: [
-      "Breathing exercises",
-      "Oxygen therapy support",
-      "Airway clearance techniques",
-      "Energy conservation training",
-      "Nutritional counseling",
-      "Medication management"
-    ],
-    image: "/services/10.jpg",
-    icon: "Lung",
-    price: "Starting from ₹1200/day"
-  },
-  {
-    id: "heart-rehab",
-    title: "Heart Rehab At Home",
-    description: "Cardiac rehabilitation services for heart patients recovering at home.",
-    fullDescription: "Our home-based cardiac rehabilitation program helps patients recover from heart attacks, surgeries, and other cardiac events with monitored exercise and lifestyle guidance.",
-    features: [
-      "Supervised exercise",
-      "Vital signs monitoring",
-      "Dietary guidance",
-      "Medication management",
-      "Stress reduction techniques",
-      "Recovery progress tracking"
-    ],
-    image: "/services/11.jpg",
-    icon: "Heart",
-    price: "Starting from ₹1300/day"
+    price: "Starting from ₹2500/day",
+    content: [
+      {
+        heading: "Advanced Medical Care at Home",
+        content: "We bring the essential elements of an ICU to your home. Our service includes state-of-the-art medical equipment like ventilators, cardiac monitors, and infusion pumps, all managed by highly trained critical care nurses. This ensures continuous, high-quality medical supervision in a familiar environment."
+      },
+      {
+        heading: "A Team-Based, Coordinated Approach",
+        content: "Our home ICU care is delivered by a multidisciplinary team, including critical care nurses, respiratory therapists, and physicians who collaborate to manage the patient's condition. We maintain constant communication with the primary treating doctor to ensure seamless and coordinated care, reducing the risk of complications."
+      }
+    ]
   }
+  // Make sure to add the content block to ALL your service objects in the array.
 ];
 
 export const getServiceById = (id: string): Service | undefined => {

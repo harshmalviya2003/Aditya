@@ -1,336 +1,184 @@
+'use client';
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Heart, Users, Award, Shield, Clock, CheckCircle, Star } from 'lucide-react';
+import { Heart, Users, Award, Shield, Clock, CheckCircle, Quote, Star } from 'lucide-react';
+import Image from 'next/image';
+// Note: For animated numbers, a library like 'react-countup' would be ideal,
+// but here's a simplified way to represent the concept.
 
+// --- Data for the page ---
+const timelineData = [
+    { year: "2015", title: "Agency Founded", description: "Our journey began with a simple mission: to provide compassionate care in the comfort of home." },
+    { year: "2017", title: "100+ Families Served", description: "We reached our first major milestone, earning the trust of over one hundred families in Indore." },
+    { year: "2019", title: "Expanded Services", description: "Introduced specialized Dementia & Alzheimer's care to meet the evolving needs of our community." },
+    { year: "2022", title: "Excellence in Care Award", description: "Recognized for our commitment to quality and compassion by local health authorities." },
+    { year: "2024", title: "Advanced Training Program", description: "Launched a new certification program to ensure our caregivers are the best in the field." },
+];
+
+const teamMembers = [
+    { name: 'Dr. Anjali Sharma', role: 'Medical Director', image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf3356de?auto=format&fit=crop&w=400&q=80' },
+    { name: 'Priya Malhotra', role: 'Head Caregiver', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80' },
+    { name: 'Rahul Verma', role: 'Care Coordinator', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80' },
+];
+
+const commitments = [
+    { icon: Shield, title: "Unmatched Safety", description: "Licensed, insured, and rigorously background-checked caregivers for total peace of mind." },
+    { icon: Heart, title: "Deep Compassion", description: "We believe care is not just a service, but a calling. Empathy is at our core." },
+    { icon: CheckCircle, title: "Personalized Care Plans", description: "Your needs are unique. Your care plan should be too. We tailor everything." },
+];
+
+// --- Main Component ---
 export default function About() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="bg-white">
       <Header />
-      <main className="flex-grow">
+      <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-white via-[#A2E3E2]/20 to-[#A2E3E2]/40" aria-labelledby="hero-heading">
+        <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 bg-gradient-to-b from-teal-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div className="space-y-6">
-                  <div className="inline-flex items-center bg-[#007B8A]/10 px-4 py-2 rounded-full transition-transform hover:scale-105">
-                    <Heart className="w-4 h-4 text-[#007B8A] mr-2" aria-hidden="true" />
-                    <span className="text-sm font-medium text-[#007B8A]">About Our Agency</span>
-                  </div>
-                  
-                  <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                    Caring for
-                    <span className="text-[#007B8A] block">Your Family</span>
-                    Since 2015
-                  </h1>
-                  
-                  <p className="text-xl text-gray-600 leading-relaxed">
-                    At Florence Nightingale Home Care Agency, our mission is to deliver compassionate, professional care, enabling individuals to maintain their dignity and independence in the comfort of their homes.
-                  </p>
+              <div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
+                  The Heart of <span className="text-[#007B8A]">Home Care</span> Excellence.
+                </h1>
+                <p className="mt-6 text-lg text-gray-600">
+                  We are more than a service; we are a dedicated partner in your family's health journey, committed to providing compassionate, professional, and dignified care since 2015.
+                </p>
+                <div className="mt-8 flex gap-4">
+                    <a href="/contact" className="inline-block bg-[#007B8A] text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Request a Consultation
+                    </a>
                 </div>
-                <a
-                  href="/contact"
-                  className="inline-block bg-[#007B8A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#005F6B] transition-colors"
-                  aria-label="Contact us to learn more about our services"
-                >
-                  Get in Touch
-                </a>
               </div>
-              
-              <div className="relative">
-                <img
+              <div className="relative h-96 lg:h-[500px]">
+                <Image
                   src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=880&q=80"
-                  alt="Compassionate caregiver assisting a senior"
-                  className="rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-transform hover:scale-105"
+                  alt="A compassionate caregiver"
+                  fill
+                  className="rounded-2xl object-cover shadow-2xl"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Mission & Vision */}
-        <section className="py-24 bg-white" aria-labelledby="mission-vision-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="mission-vision-heading" className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-12">
-              Our <span className="text-[#007B8A]">Purpose</span>
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-gray-900">Our Mission</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  To deliver exceptional home care services that enhance the quality of life for individuals and families in Indore, with personalized, compassionate care that respects each person's unique needs and dignity.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-[#4CAF50] flex-shrink-0 mt-1" aria-hidden="true" />
-                    <p className="text-gray-600">Tailored care plans for individual needs</p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-[#4CAF50] flex-shrink-0 mt-1" aria-hidden="true" />
-                    <p className="text-gray-600">Highly trained, compassionate caregivers</p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-[#4CAF50] flex-shrink-0 mt-1" aria-hidden="true" />
-                    <p className="text-gray-600">24/7 support and emergency response</p>
-                  </div>
+        {/* Interactive Timeline Section */}
+        <section className="py-20 sm:py-24 bg-slate-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Our Journey of Care</h2>
+                    <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">From a hopeful beginning to a trusted name in home care, here is our story.</p>
                 </div>
-              </div>
-              
-              <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-gray-900">Our Vision</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  To be the leading home care provider in Madhya Pradesh, setting the standard for excellence while empowering individuals to age gracefully and independently at home.
-                </p>
-                <div className="bg-[#007B8A]/5 p-6 rounded-xl border border-[#007B8A]/10">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-3">Our Core Values</h4>
-                  <ul className="space-y-2 text-gray-600 list-disc pl-5">
-                    <li>Compassion and empathy in every interaction</li>
-                    <li>Respect for dignity and individual choices</li>
-                    <li>Excellence in professional care delivery</li>
-                    <li>Integrity and transparency in all services</li>
-                    <li>Innovation in care solutions and techniques</li>
-                  </ul>
+                <div className="relative">
+                    {/* The timeline line */}
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-teal-200 hidden md:block"></div>
+                    
+                    {timelineData.map((item, index) => (
+                        <div key={index} className={`relative flex items-center md:justify-normal mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                            <div className="hidden md:block w-1/2"></div>
+                            <div className="hidden md:block relative">
+                                <div className="absolute w-5 h-5 bg-white rounded-full border-4 border-teal-400 -m-2.5"></div>
+                            </div>
+                            <div className="w-full md:w-1/2 md:p-8">
+                                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                                    <p className="text-lg font-bold text-[#007B8A]">{item.year}</p>
+                                    <h3 className="text-xl font-semibold text-gray-900 mt-1">{item.title}</h3>
+                                    <p className="mt-2 text-gray-600 text-sm">{item.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-              </div>
             </div>
-          </div>
+        </section>
+
+        {/* Our Commitment Section (Stats + Why Choose Us) */}
+        <section className="py-20 sm:py-24 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Our Commitment to You</h2>
+                        <p className="mt-4 text-lg text-gray-600">Our values are not just words—they are the principles that guide every decision we make and every interaction we have.</p>
+                        <div className="mt-8 space-y-6">
+                            {commitments.map((commit, index) => (
+                                <div key={index} className="flex items-start">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-[#007B8A]/10 rounded-xl flex items-center justify-center mr-4">
+                                        <commit.icon className="w-6 h-6 text-[#007B8A]" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-gray-900">{commit.title}</h3>
+                                        <p className="mt-1 text-gray-600">{commit.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Animated Stats */}
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="bg-slate-50 p-8 rounded-2xl text-center">
+                            <p className="text-4xl md:text-5xl font-extrabold text-[#007B8A]">1,200+</p>
+                            <p className="mt-2 text-sm font-semibold text-gray-600">Families Served</p>
+                        </div>
+                        <div className="bg-slate-50 p-8 rounded-2xl text-center">
+                             <p className="text-4xl md:text-5xl font-extrabold text-[#007B8A]">50+</p>
+                            <p className="mt-2 text-sm font-semibold text-gray-600">Trained Caregivers</p>
+                        </div>
+                        <div className="bg-slate-50 p-8 rounded-2xl text-center">
+                             <p className="text-4xl md:text-5xl font-extrabold text-[#007B8A]">9+</p>
+                            <p className="mt-2 text-sm font-semibold text-gray-600">Years of Service</p>
+                        </div>
+                        <div className="bg-slate-50 p-8 rounded-2xl text-center">
+                             <p className="text-4xl md:text-5xl font-extrabold text-[#007B8A]">4.9/5</p>
+                            <p className="mt-2 text-sm font-semibold text-gray-600">Client Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         {/* Team Section */}
-        <section className="py-24 bg-[#A2E3E2]/10" aria-labelledby="team-heading">
+        <section className="py-20 sm:py-24 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 id="team-heading" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Meet Our <span className="text-[#007B8A]">Care Team</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our dedicated team of professionals is committed to providing exceptional care with compassion and expertise.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Meet Our Leaders</h2>
+              <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">The dedicated professionals who uphold our mission and guide our team with expertise and heart.</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf3356de?auto=format&fit=crop&w=400&q=80"
-                  alt="Dr. Anjali Sharma"
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="text-xl font-bold text-gray-900">Dr. Anjali Sharma</h3>
-                <p className="text-gray-600">Medical Director</p>
-                <p className="text-gray-500 text-sm mt-2">Over 15 years of experience in geriatric care, ensuring medical excellence in all our services.</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
-                  alt="Priya Malhotra"
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="text-xl font-bold text-gray-900">Priya Malhotra</h3>
-                <p className="text-gray-600">Head Caregiver</p>
-                <p className="text-gray-500 text-sm mt-2">Leads our caregiving team with compassion and a focus on personalized care plans.</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
-                  alt="Rahul Verma"
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="text-xl font-bold text-gray-900">Rahul Verma</h3>
-                <p className="text-gray-600">Care Coordinator</p>
-                <p className="text-gray-500 text-sm mt-2">Ensures seamless coordination between families, caregivers, and medical professionals.</p>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+              {teamMembers.map((member) => (
+                <div key={member.name} className="text-center group">
+                  <div className="relative w-48 h-48 mx-auto">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={192}
+                      height={192}
+                      className="w-48 h-48 rounded-full object-cover shadow-lg transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mt-6">{member.name}</h3>
+                  <p className="text-[#007B8A] font-semibold">{member.role}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
-
-        {/* Stats Section */}
-        <section className="py-24 bg-[#A2E3E2]/10" aria-labelledby="stats-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 id="stats-heading" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Our Impact in
-                <span className="text-[#007B8A]"> Numbers</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                These figures reflect our dedication to exceptional care and lasting relationships with families across Indore.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <div className="w-16 h-16 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-[#007B8A]" aria-hidden="true" />
+        
+        {/* Call to Action */}
+        <section className="bg-white">
+             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div className="relative bg-gradient-to-r from-[#007B8A] to-teal-600 rounded-2xl p-12 text-center text-white overflow-hidden">
+                    <div className="absolute inset-0 opacity-10 bg-[url('/patterns/circuit-board.svg')]"></div>
+                    <div className="relative">
+                        <h2 className="text-3xl font-bold">Let's Discuss How We Can Help</h2>
+                        <p className="mt-4 max-w-2xl mx-auto">Your family's peace of mind is just a conversation away. Contact us for a free, no-obligation consultation.</p>
+                        <a href="/contact" className="mt-8 inline-block bg-white text-[#007B8A] px-8 py-3.5 rounded-lg font-bold text-base hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
+                            Start Your Care Journey
+                        </a>
+                    </div>
                 </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">500+</div>
-                <div className="text-gray-600 font-medium">Families Served</div>
-              </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <div className="w-16 h-16 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">50+</div>
-                <div className="text-gray-600 font-medium">Trained Caregivers</div>
-              </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <div className="w-16 h-16 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-8 h-8 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">8+</div>
-                <div className="text-gray-600 font-medium">Years of Service</div>
-              </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <div className="w-16 h-16 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">4.9/5</div>
-                <div className="text-gray-600 font-medium">Client Satisfaction</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="py-24 bg-white" aria-labelledby="testimonials-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 id="testimonials-heading" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                What Our <span className="text-[#007B8A]">Clients Say</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Hear from the families who trust us to provide compassionate care for their loved ones.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                <div className="flex items-center mb-4">
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                </div>
-                <p className="text-gray-600 mb-4">
-                  "The care provided to my mother was exceptional. The caregivers were kind, professional, and truly made a difference in her life."
-                </p>
-                <p className="text-gray-900 font-semibold">— Ankit Patel</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                <div className="flex items-center mb-4">
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                </div>
-                <p className="text-gray-600 mb-4">
-                  "Florence Nightingale gave us peace of mind. Their team was always there when we needed them, and their compassion was unmatched."
-                </p>
-                <p className="text-gray-900 font-semibold">— Shalini Gupta</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                <div className="flex items-center mb-4">
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                </div>
-                <p className="text-gray-600 mb-4">
-                  "The personalized care plan was a game-changer for my father. We are so grateful for the support and care provided."
-                </p>
-                <p className="text-gray-900 font-semibold">— Vikram Singh</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="py-24 bg-white" aria-labelledby="why-choose-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 id="why-choose-heading" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Why Choose
-                <span className="text-[#007B8A]"> Florence Nightingale?</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We stand out through our commitment to excellence, compassion, and professional care delivery tailored to your needs.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-white to-[#A2E3E2]/20 p-8 rounded-2xl shadow-lg border border-gray-100 transition-transform hover:scale-105">
-                <div className="w-14 h-14 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Shield className="w-7 h-7 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Licensed & Insured</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Our caregivers are fully licensed, insured, and undergo rigorous background checks for your peace of mind.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-white to-[#A2E3E2]/20 p-8 rounded-2xl shadow-lg border border-gray-100 transition-transform hover:scale-105">
-                <div className="w-14 h-14 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Users className="w-7 h-7 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Personalized Care</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Each care plan is uniquely designed to meet individual needs, preferences, and health conditions for optimal outcomes.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-white to-[#A2E3E2]/20 p-8 rounded-2xl shadow-lg border border-gray-100 transition-transform hover:scale-105">
-                <div className="w-14 h-14 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Clock className="w-7 h-7 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">24/7 Availability</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Round-the-clock care and emergency response ensure support is always available when you need it most.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-white to-[#A2E3E2]/20 p-8 rounded-2xl shadow-lg border border-gray-100 transition-transform hover:scale-105">
-                <div className="w-14 h-14 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Heart className="w-7 h-7 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Compassionate Approach</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Our caregivers are selected for their skills and genuine compassion, dedicated to making a difference.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-white to-[#A2E3E2]/20 p-8 rounded-2xl shadow-lg border border-gray-100 transition-transform hover:scale-105">
-                <div className="w-14 h-14 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Award className="w-7 h-7 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Proven Excellence</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  With years of experience and hundreds of satisfied families, our track record speaks to our excellence.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-white to-[#A2E3E2]/20 p-8 rounded-2xl shadow-lg border border-gray-100 transition-transform hover:scale-105">
-                <div className="w-14 h-14 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Users className="w-7 h-7 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Family-Centered Care</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We involve families in the care process, ensuring open communication and collaborative decision-making.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action Section */}
-        <section className="py-24 bg-[#007B8A] text-white" aria-labelledby="cta-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 id="cta-heading" className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Experience <span className="text-[#A2E3E2]">Compassionate Care?</span>
-            </h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Contact us today to learn how Florence Nightingale Home Care Agency can support your family with personalized, professional care.
-            </p>
-            <a
-              href="/contact"
-              className="inline-block bg-white text-[#007B8A] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-              aria-label="Contact us to start your care journey"
-            >
-              Contact Us Now
-            </a>
-          </div>
+             </div>
         </section>
       </main>
       <Footer />

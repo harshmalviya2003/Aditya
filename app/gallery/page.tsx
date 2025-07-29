@@ -1,67 +1,24 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Camera, Heart, Users, Home, Phone, ArrowRight } from 'lucide-react';
+import { Camera, Phone, ArrowRight, Search, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const galleryImages = [
-    {
-      id: 1,
-      src: "https://images.pexels.com/photos/7551428/pexels-photo-7551428.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Caregiver assisting elderly patient with daily activities",
-      category: "Personal Care"
-    },
-    {
-      id: 2,
-      src: "https://images.pexels.com/photos/7551667/pexels-photo-7551667.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Compassionate companionship services",
-      category: "Companionship"
-    },
-    {
-      id: 3,
-      src: "https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Medical care support at home",
-      category: "Medical Care"
-    },
-    {
-      id: 4,
-      src: "https://images.pexels.com/photos/7551544/pexels-photo-7551544.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Specialized dementia care services",
-      category: "Dementia Care"
-    },
-    {
-      id: 5,
-      src: "https://images.pexels.com/photos/7551598/pexels-photo-7551598.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Respite care for family caregivers",
-      category: "Respite Care"
-    },
-    {
-      id: 6,
-      src: "https://images.pexels.com/photos/7579319/pexels-photo-7579319.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Post-hospital recovery support",
-      category: "Recovery Care"
-    },
-    {
-      id: 7,
-      src: "https://images.pexels.com/photos/5722164/pexels-photo-5722164.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Professional nursing care at home",
-      category: "Medical Care"
-    },
-    {
-      id: 8,
-      src: "https://images.pexels.com/photos/5722163/pexels-photo-5722163.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Elderly care and mobility assistance",
-      category: "Personal Care"
-    },
-    {
-      id: 9,
-      src: "https://images.pexels.com/photos/6647019/pexels-photo-6647019.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Family-centered care approach",
-      category: "Companionship"
-    }
+    { id: 1, src: "https://images.pexels.com/photos/7551428/pexels-photo-7551428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Caregiver assisting elderly patient with daily activities", category: "Personal Care" },
+    { id: 2, src: "https://images.pexels.com/photos/7551667/pexels-photo-7551667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Compassionate companionship services", category: "Companionship" },
+    { id: 3, src: "https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Medical care support at home", category: "Medical Care" },
+    { id: 4, src: "https://images.pexels.com/photos/7551544/pexels-photo-7551544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Specialized dementia care services", category: "Dementia Care" },
+    { id: 5, src: "https://images.pexels.com/photos/7551598/pexels-photo-7551598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Respite care for family caregivers", category: "Respite Care" },
+    { id: 6, src: "https://images.pexels.com/photos/7579319/pexels-photo-7579319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Post-hospital recovery support", category: "Recovery Care" },
+    { id: 7, src: "https://images.pexels.com/photos/5722164/pexels-photo-5722164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Professional nursing care at home", category: "Medical Care" },
+    { id: 8, src: "https://images.pexels.com/photos/5722163/pexels-photo-5722163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Elderly care and mobility assistance", category: "Personal Care" },
+    { id: 9, src: "https://images.pexels.com/photos/6647019/pexels-photo-6647019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Family-centered care approach", category: "Companionship" },
   ];
 
   const categories = ["All", "Personal Care", "Companionship", "Medical Care", "Dementia Care", "Respite Care", "Recovery Care"];
@@ -70,45 +27,76 @@ export default function Gallery() {
     ? galleryImages
     : galleryImages.filter(image => image.category === selectedCategory);
 
+  const openModal = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+  
+  const findImageIndex = (image) => filteredImages.findIndex(img => img.id === image.id);
+
+  const showNextImage = () => {
+    if (selectedImage) {
+      const currentIndex = findImageIndex(selectedImage);
+      const nextIndex = (currentIndex + 1) % filteredImages.length;
+      setSelectedImage(filteredImages[nextIndex]);
+    }
+  };
+
+  const showPrevImage = () => {
+    if (selectedImage) {
+      const currentIndex = findImageIndex(selectedImage);
+      const prevIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
+      setSelectedImage(filteredImages[prevIndex]);
+    }
+  };
+
+  // Keyboard navigation for modal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (selectedImage) {
+        if (e.key === 'ArrowRight') showNextImage();
+        if (e.key === 'ArrowLeft') showPrevImage();
+        if (e.key === 'Escape') closeModal();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage, filteredImages]);
+
+
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5FAFA]">
+    <div className="bg-slate-50">
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 sm:py-24 bg-gradient-to-br from-[#F5FAFA] to-[#A2E3E2]/30" aria-labelledby="hero-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <div className="inline-flex items-center bg-[#007B8A]/10 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-6 sm:mb-8 shadow-lg transition-transform hover:scale-105">
-                <Camera className="w-4 h-4 sm:w-5 sm:h-5 text-[#007B8A] mr-2" aria-hidden="true" />
-                <span className="text-sm sm:text-lg font-medium text-[#007B8A]">Our Care Gallery</span>
-              </div>
-              
-              <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
-                See Our
-                <span className="text-[#007B8A] block">Care in Action</span>
-              </h1>
-              
-              <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                Explore the compassionate care we provide daily. These images highlight our dedicated caregivers delivering professional, dignified care to our clients.
-              </p>
-            </div>
+        <section className="py-20 sm:py-24 bg-gradient-to-b from-teal-50 to-slate-50" aria-labelledby="hero-heading">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
+              A Glimpse Into Our <span className="text-[#007B8A]">Care</span>
+            </h1>
+            <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+              Explore moments of compassion, professionalism, and dedication. Our gallery showcases our caregivers providing exceptional care in the comfort of our clients' homes.
+            </p>
           </div>
         </section>
 
-        {/* Gallery Grid */}
-        <section className="py-20 sm:py-24 bg-[#F5FAFA]" aria-labelledby="gallery-heading">
+        {/* Gallery Grid Section */}
+        <section className="py-16 sm:py-20" aria-labelledby="gallery-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 id="gallery-heading" className="sr-only">Care Gallery</h2>
             {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-200 ${
+                  className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 ${
                     selectedCategory === category
-                      ? "bg-[#007B8A] text-white shadow-lg"
-                      : "bg-gray-100 text-gray-700 hover:bg-[#007B8A]/10 hover:text-[#007B8A]"
+                      ? "bg-[#007B8A] text-white shadow-md"
+                      : "bg-white text-gray-700 hover:bg-slate-100"
                   }`}
                   aria-pressed={selectedCategory === category}
                 >
@@ -117,119 +105,100 @@ export default function Gallery() {
               ))}
             </div>
 
-            {/* Gallery Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {filteredImages.length === 0 ? (
-                <p className="text-center text-gray-600 col-span-full">No images found for this category.</p>
-              ) : (
-                filteredImages.map((image) => (
-                  <div
-                    key={image.id}
-                    className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-64 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                        <div className="inline-block bg-[#007B8A] text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-2">
-                          {image.category}
-                        </div>
-                        <p className="text-white text-sm sm:text-base leading-relaxed">
-                          {image.alt}
-                        </p>
+            {/* Masonry Grid */}
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+              {filteredImages.map((image) => (
+                <div
+                  key={image.id}
+                  className="group relative overflow-hidden rounded-2xl shadow-md cursor-pointer break-inside-avoid"
+                  onClick={() => openModal(image)}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={500}
+                    height={750}
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <div>
+                          <p className="text-white text-base font-semibold">{image.category}</p>
+                          <p className="text-sm text-slate-200">{image.alt}</p>
                       </div>
-                    </div>
                   </div>
-                ))
-              )}
+                </div>
+              ))}
             </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-20 sm:py-24 bg-[#F5FAFA]" aria-labelledby="stats-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 id="stats-heading" className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Our Care
-                <span className="text-[#007B8A]"> Impact</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
-                These numbers reflect the lives we’ve touched and the difference we’ve made in our community.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-              <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <div className="w-14 sm:w-16 h-14 sm:h-16 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-7 sm:w-8 h-7 sm:h-8 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">500+</div>
-                <div className="text-gray-700 font-medium text-sm sm:text-base">Families Served</div>
-              </div>
-              
-              <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <div className="w-14 sm:w-16 h-14 sm:h-16 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-7 sm:w-8 h-7 sm:h-8 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">50,000+</div>
-                <div className="text-gray-700 font-medium text-sm sm:text-base">Hours of Care</div>
-              </div>
-              
-              <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <div className="w-14 sm:w-16 h-14 sm:h-16 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Home className="w-7 sm:w-8 h-7 sm:h-8 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">95%</div>
-                <div className="text-gray-700 font-medium text-sm sm:text-base">Prefer Home Care</div>
-              </div>
-              
-              <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg text-center transition-transform hover:scale-105">
-                <div className="w-14 sm:w-16 h-14 sm:h-16 bg-[#007B8A]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-7 sm:w-8 h-7 sm:h-8 text-[#007B8A]" aria-hidden="true" />
-                </div>
-                <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">50+</div>
-                <div className="text-gray-700 font-medium text-sm sm:text-base">Expert Caregivers</div>
-              </div>
-            </div>
+            {filteredImages.length === 0 && (
+                <p className="text-center text-gray-600 col-span-full mt-8">No images found for this category.</p>
+            )}
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 sm:py-24 bg-gradient-to-r from-[#007B8A] to-[#005F6B]" aria-labelledby="cta-heading">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 id="cta-heading" className="text-4xl sm:text-5xl font-bold text-white mb-4 sm:mb-6">
-              Experience Our <span className="text-[#A2E3E2]">Compassionate Care</span>
-            </h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto">
-              Discover the difference our personalized care can make. Schedule a consultation or contact us to learn more about our services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center bg-[#4CAF50] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#3e8e41] transition-all shadow-lg hover:shadow-[#4CAF50]/30"
-                aria-label="Schedule a visit with Florence Nightingale Home Care"
-              >
-                Schedule Visit
-                <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5" aria-hidden="true" />
-              </a>
-              <a
-                href="tel:+919876543210"
-                className="inline-flex items-center justify-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base hover:bg-white hover:text-[#007B8A] transition-all"
-                aria-label="Call Florence Nightingale Home Care at +91 98765 43210"
-              >
-                <Phone className="w-4 sm:w-5 h-4 sm:h-5 mr-2" aria-hidden="true" />
-                Call: +91 98765 43210
-              </a>
+        <section className="py-20 sm:py-24 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="bg-gradient-to-r from-[#007B8A] to-teal-600 rounded-2xl p-12 text-center text-white">
+                    <h2 className="text-3xl font-bold">See the Difference Compassionate Care Makes</h2>
+                    <p className="mt-4 max-w-2xl mx-auto">Ready to discuss your family's needs? Our team is here to provide answers and support.</p>
+                    <a href="/contact" className="mt-8 inline-block bg-white text-[#007B8A] px-8 py-3.5 rounded-lg font-bold text-base hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
+                        Schedule a Free Consultation
+                    </a>
+                </div>
             </div>
-          </div>
         </section>
       </main>
       <Footer />
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in"
+          onClick={closeModal}
+        >
+          <div className="relative w-full h-full max-w-4xl max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button */}
+            <button onClick={closeModal} className="absolute -top-12 right-0 sm:right-0 md:-right-12 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition-colors" aria-label="Close">
+              <X size={24} />
+            </button>
+            
+            {/* Image */}
+            <Image
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              fill
+              className="object-contain"
+              quality={100}
+            />
+
+            {/* Prev Button */}
+            <button onClick={showPrevImage} className="absolute left-0 sm:-left-16 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition-colors" aria-label="Previous image">
+              <ChevronLeft size={32} />
+            </button>
+
+            {/* Next Button */}
+            <button onClick={showNextImage} className="absolute right-0 sm:-right-16 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition-colors" aria-label="Next image">
+              <ChevronRight size={32} />
+            </button>
+
+             {/* Image Info */}
+             <div className="absolute bottom-[-60px] left-0 right-0 text-center text-white p-4 bg-black/30">
+                <p className="font-semibold">{selectedImage.category}</p>
+                <p className="text-sm text-slate-300">{selectedImage.alt}</p>
+            </div>
+          </div>
+        </div>
+      )}
+      <style jsx>{`
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.3s ease-out;
+        }
+      `}</style>
     </div>
   );
 }

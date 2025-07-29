@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
+import { HelpCircle, Phone, Mail, ChevronDown, Heart, Shield, Users } from 'lucide-react';
 
 interface FAQItem {
   question: string;
@@ -9,129 +9,114 @@ interface FAQItem {
 }
 
 const FAQ = () => {
-  const [openItems, setOpenItems] = useState<number[]>([0]);
+  // Allow only one item to be open at a time, or none.
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
-    );
+    // If the clicked item is already open, close it. Otherwise, open the new item.
+    setOpenIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
   const faqData: FAQItem[] = [
     {
       question: "What services does The Florence Nightingale Home Care Agency provide?",
-      answer: "We offer comprehensive home care services including personal care assistance, companionship services, medical care support, dementia and Alzheimer's care, respite care, and post-hospital recovery care. Our services are tailored to meet individual needs and can range from a few hours a day to 24/7 care."
+      answer: "We offer comprehensive home care services including personal care, companionship, medical support, dementia and Alzheimer's care, respite care, and post-hospital recovery. Our services are tailored to meet individual needs, from a few hours a day to 24/7 care."
     },
     {
       question: "Are your caregivers licensed and trained?",
-      answer: "Yes, all our caregivers are thoroughly screened, licensed, and professionally trained. They undergo background checks, skills assessments, and ongoing training programs. Our medical staff includes registered nurses and certified nursing assistants with specialized training in home healthcare."
+      answer: "Yes, all our caregivers are thoroughly screened, licensed, and professionally trained. They undergo background checks, skills assessments, and continuous training. Our team includes registered nurses and certified nursing assistants with specialized home healthcare training."
     },
     {
       question: "How quickly can you start providing care services?",
-      answer: "We understand that care needs can be urgent. In most cases, we can begin providing care within 24-48 hours of your initial consultation. For emergency situations, we offer same-day service availability depending on the type of care required and caregiver availability."
+      answer: "We understand care needs can be urgent. We can typically start care within 24-48 hours of the initial consultation. For emergencies, same-day service is often available depending on the care required and caregiver availability."
     },
     {
       question: "What are your rates and payment options?",
-      answer: "Our rates vary depending on the type and level of care required, duration of service, and scheduling needs. We accept private pay, long-term care insurance, and work with some healthcare funding programs. We provide transparent pricing with no hidden fees and offer flexible payment options."
+      answer: "Rates vary based on the level of care and hours needed. We provide transparent pricing with no hidden fees and accept private pay, long-term care insurance, and work with some healthcare funding programs to offer flexible payment options."
     },
     {
       question: "Can family members be involved in the care planning process?",
-      answer: "Absolutely! We encourage family involvement in developing and updating care plans. We provide regular updates on your loved one's condition and welcome family input. Our goal is to work as a team with families to ensure the best possible care outcomes."
+      answer: "Absolutely! We encourage family involvement in creating and updating care plans. We believe in a team approach and provide regular updates to ensure the best possible outcomes for your loved one."
     },
     {
       question: "Do you provide care for specific medical conditions?",
-      answer: "Yes, we have specialized experience caring for individuals with various conditions including diabetes, heart disease, stroke recovery, dementia, Alzheimer's disease, Parkinson's disease, and post-surgical care. Our caregivers receive specific training for different medical conditions and work closely with healthcare providers."
+      answer: "Yes, our team is experienced in caring for individuals with various conditions like diabetes, heart disease, stroke recovery, dementia, and post-surgical needs. Caregivers receive condition-specific training to ensure expert support."
     },
-    {
-      question: "What happens if our regular caregiver is unavailable?",
-      answer: "We maintain a team of qualified backup caregivers to ensure continuity of care. If your regular caregiver is unavailable due to illness or vacation, we'll arrange for a replacement caregiver who is familiar with your care plan and preferences. We strive to minimize disruptions to your routine."
-    },
-    {
-      question: "How do you ensure the safety and security of clients?",
-      answer: "Safety is our top priority. All caregivers undergo thorough background checks and reference verification. We have strict protocols for medication management, fall prevention, and emergency response. Our caregivers are trained in first aid and CPR, and we maintain 24/7 supervisor availability for any concerns."
-    }
   ];
 
   return (
-    <section className="py-20 bg-[#A2E3E2]/10">
-      <div className="max-w-4xl mx-auto px-4">
+    <section className="py-20 sm:py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-[#007B8A]/10 px-4 py-2 rounded-full mb-6">
-            <HelpCircle className="w-4 h-4 text-[#007B8A] mr-2" />
-            <span className="text-sm font-medium text-[#007B8A]">Frequently Asked Questions</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Your Questions
-            <span className="text-[#007B8A]"> Answered</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+            Your Questions, Answered
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Find answers to common questions about our home care services, 
-            caregivers, and how we can support your family's needs.
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            Find answers to common questions about our services, caregivers, and how we support your family.
           </p>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="space-y-4">
+        {/* Modern Accordion */}
+        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100">
           {faqData.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-            >
+            <div key={index} className="border-b border-gray-200 last:border-b-0">
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#A2E3E2]/20 rounded-2xl transition-colors duration-200"
+                className="w-full flex justify-between items-center p-6 text-left"
               >
-                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                <h3 className="text-lg font-semibold text-gray-800">
                   {item.question}
                 </h3>
-                <div className="flex-shrink-0">
-                  {openItems.includes(index) ? (
-                    <ChevronUp className="w-6 h-6 text-[#007B8A]" />
-                  ) : (
-                    <ChevronDown className="w-6 h-6 text-[#007B8A]" />
-                  )}
+                <div className="flex-shrink-0 ml-4">
+                  <ChevronDown
+                    className={`w-6 h-6 text-[#007B8A] transition-transform duration-300 ${
+                      openIndex === index ? 'rotate-180' : ''
+                    }`}
+                  />
                 </div>
               </button>
-              
-              {openItems.includes(index) && (
-                <div className="px-8 pb-6">
-                  <div className="border-t border-[#007B8A]/20 pt-4">
-                    <p className="text-gray-600 leading-relaxed">
-                      {item.answer}
-                    </p>
-                  </div>
+              {/* Animated Answer Panel */}
+              <div
+                className={`grid transition-all duration-500 ease-in-out ${
+                  openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <p className="px-6 pb-6 text-gray-600 leading-relaxed">
+                    {item.answer}
+                  </p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Contact CTA */}
-        <div className="text-center mt-12 p-8 bg-[#007B8A]/5 rounded-2xl border border-[#007B8A]/10">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Still Have Questions?
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Our care coordinators are here to help you understand our services and find the perfect care solution.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+919876543210"
-              className="inline-flex items-center justify-center bg-[#4CAF50] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3e8e41] transition-colors duration-200 shadow-md hover:shadow-lg"
-            >
-              Call Us: +91 98765 43210
-            </a>
-            <a
-              href="mailto:info@florencenightingalecare.com"
-              className="inline-flex items-center justify-center border-2 border-[#007B8A] text-[#007B8A] px-6 py-3 rounded-lg font-semibold hover:bg-[#007B8A] hover:text-white transition-colors duration-200"
-            >
-              Email Us
-            </a>
-          </div>
+        {/* Why Choose Us Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+            <div className="text-center">
+                <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Why Trust Our Care?</h2>
+                <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">We provide more than just services; we deliver peace of mind.</p>
+            </div>
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                <div className="p-6">
+                    <Shield className="w-12 h-12 text-[#007B8A] mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-gray-900">Certified & Screened</h3>
+                    <p className="mt-2 text-gray-600">All caregivers are licensed, insured, and thoroughly background-checked.</p>
+                </div>
+                <div className="p-6">
+                    <Heart className="w-12 h-12 text-[#007B8A] mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-gray-900">Compassionate Staff</h3>
+                    <p className="mt-2 text-gray-600">Our team is chosen for their empathy and dedication to dignified care.</p>
+                </div>
+                <div className="p-6">
+                    <Users className="w-12 h-12 text-[#007B8A] mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-gray-900">Personalized Plans</h3>
+                    <p className="mt-2 text-gray-600">We create custom care plans that are tailored to your unique needs.</p>
+                </div>
+            </div>
         </div>
+
       </div>
     </section>
   );

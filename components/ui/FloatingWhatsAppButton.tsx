@@ -15,7 +15,7 @@ const FloatingWhatsAppButton = () => {
         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#128C7E] transition-all duration-300 hover:scale-105 group"
+        className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#4CAF50] text-white rounded-full shadow-lg hover:bg-[#128C7E] transition-all duration-300 hover:scale-105 group"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle className="w-6 h-6 md:w-7 md:h-7" />

@@ -26,7 +26,7 @@ const Hero = () => {
   }, [images.length]);
 
   return (
-    <section className="relative bg-gradient-to-br from-white via-[#E0F7FA] to-[#B2EBF2] min-h-[80vh] md:min-h-[90vh] flex items-center py-6 md:py-10">
+    <section className="relative bg-gradient-to-br from-white via-[#E0F7FA] to-[#B2EBF2] min-h-[80vh] md:min-h-[90vh] flex items-center py-6 md:py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 items-center relative z-10">
         {/* Content */}
         <div className="space-y-4 md:space-y-6 text-center lg:text-left">
@@ -74,15 +74,22 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Hero Image with Floating Testimonial */}
-        <div className="relative mt-4 lg:mt-0">
-          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src={images[currentImageIndex]}
-              alt="Compassionate nurse helping elderly patient with medication"
-              className="w-full h-[350px] sm:h-[400px] md:h-[500px] object-cover transition-opacity duration-1000"
-              key={currentImageIndex}
-            />
+        {/* Hero Image with Scroll Animation */}
+        <div className="relative mt-4 lg:mt-0 h-[350px] sm:h-[400px] md:h-[500px]">
+          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-full">
+            <div className="relative h-full w-full overflow-hidden">
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Care service ${index + 1}`}
+                  className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000 ease-in-out ${
+                    index === currentImageIndex ? 'translate-x-0' : 
+                    index < currentImageIndex ? '-translate-x-full' : 'translate-x-full'
+                  }`}
+                />
+              ))}
+            </div>
             
             {/* Floating Testimonial */}
             <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 bg-white/90 backdrop-blur-sm p-3 sm:p-4 rounded-xl shadow-lg border border-gray-100">
@@ -111,4 +118,4 @@ const Hero = () => {
   );
 }
 
-export default Hero;
+export default Hero;  

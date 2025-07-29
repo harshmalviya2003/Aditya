@@ -9,8 +9,6 @@ const Services = () => {
 
   return (
     <section className="py-16 sm:py-20 bg-[#A2E3E2]/10">
-      {/* Decorative Elements */}
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -42,7 +40,7 @@ const Services = () => {
               <div className="bg-[#007B8A] p-4 sm:p-6 flex items-center">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-md overflow-hidden">
                   <Image 
-                    src={`/services/${service.image}.jpg`} 
+                    src={service.image} // Use service.image directly
                     alt={service.title}
                     width={64}
                     height={64}

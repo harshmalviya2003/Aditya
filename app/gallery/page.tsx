@@ -5,11 +5,21 @@ import Footer from '@/components/Footer';
 import { Camera, Phone, ArrowRight, Search, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
-export default function Gallery() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedImage, setSelectedImage] = useState(null);
+// Define a type for a single gallery image for type safety and reusability.
+interface GalleryImage {
+  id: number;
+  src: string;
+  alt: string;
+  category: string;
+}
 
-  const galleryImages = [
+export default function Gallery() {
+  // Explicitly type the state. 'selectedImage' can be a GalleryImage object or null.
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+
+  // Apply the GalleryImage type to the array of images.
+  const galleryImages: GalleryImage[] = [
     { id: 1, src: "https://images.pexels.com/photos/7551428/pexels-photo-7551428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Caregiver assisting elderly patient with daily activities", category: "Personal Care" },
     { id: 2, src: "https://images.pexels.com/photos/7551667/pexels-photo-7551667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Compassionate companionship services", category: "Companionship" },
     { id: 3, src: "https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Medical care support at home", category: "Medical Care" },
@@ -27,7 +37,8 @@ export default function Gallery() {
     ? galleryImages
     : galleryImages.filter(image => image.category === selectedCategory);
 
-  const openModal = (image) => {
+  // Type the 'image' parameter with the GalleryImage interface.
+  const openModal = (image: GalleryImage) => {
     setSelectedImage(image);
   };
 
@@ -35,7 +46,8 @@ export default function Gallery() {
     setSelectedImage(null);
   };
   
-  const findImageIndex = (image) => filteredImages.findIndex(img => img.id === image.id);
+  // Type the 'image' parameter with the GalleryImage interface.
+  const findImageIndex = (image: GalleryImage) => filteredImages.findIndex(img => img.id === image.id);
 
   const showNextImage = () => {
     if (selectedImage) {
@@ -55,7 +67,8 @@ export default function Gallery() {
 
   // Keyboard navigation for modal
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    // Type the event 'e' as a KeyboardEvent.
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedImage) {
         if (e.key === 'ArrowRight') showNextImage();
         if (e.key === 'ArrowLeft') showPrevImage();
@@ -64,7 +77,8 @@ export default function Gallery() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImage, filteredImages]);
+  }, [selectedImage, filteredImages, showNextImage, showPrevImage, closeModal]);
+
 
 
   return (
@@ -157,7 +171,8 @@ export default function Gallery() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in"
           onClick={closeModal}
         >
-          <div className="relative w-full h-full max-w-4xl max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+          {/* Type the event 'e' as a MouseEvent to use stopPropagation */}
+          <div className="relative w-full h-full max-w-4xl max-h-[90vh]" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
             {/* Close Button */}
             <button onClick={closeModal} className="absolute -top-12 right-0 sm:right-0 md:-right-12 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition-colors" aria-label="Close">
               <X size={24} />

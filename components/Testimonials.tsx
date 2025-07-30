@@ -19,14 +19,14 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 sm:py-24 bg-slate-50 overflow-hidden">
+    <section className="py-10 sm:py-20 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
-            What Our Families Say
+            What Our <span className="text-[#007B8A]">Families Say</span>
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">
             Real stories from families who have trusted us with their loved ones' care.
           </p>
         </div>
@@ -74,7 +74,7 @@ const Testimonials = () => {
       </div>
       
       {/* Trust Indicators Section */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div className="bg-white/60 p-6 rounded-xl border border-gray-200/80">
             <Heart className="w-10 h-10 text-[#007B8A] mx-auto mb-3" />

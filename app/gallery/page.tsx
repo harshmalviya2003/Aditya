@@ -86,7 +86,7 @@ export default function Gallery() {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 sm:py-24 bg-gradient-to-b from-teal-50 to-slate-50" aria-labelledby="hero-heading">
+        <section className="py-10 sm:py-20 bg-gradient-to-b from-teal-50 to-slate-50" aria-labelledby="hero-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
               A Glimpse Into Our <span className="text-[#007B8A]">Care</span>
@@ -98,27 +98,9 @@ export default function Gallery() {
         </section>
 
         {/* Gallery Grid Section */}
-        <section className="py-16 sm:py-20" aria-labelledby="gallery-heading">
+        <section className="py-10 sm:py-20" aria-labelledby="gallery-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="gallery-heading" className="sr-only">Care Gallery</h2>
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 ${
-                    selectedCategory === category
-                      ? "bg-[#007B8A] text-white shadow-md"
-                      : "bg-white text-gray-700 hover:bg-slate-100"
-                  }`}
-                  aria-pressed={selectedCategory === category}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
+            
             {/* Masonry Grid */}
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
               {filteredImages.map((image) => (

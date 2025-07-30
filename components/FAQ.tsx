@@ -45,12 +45,12 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 sm:py-24 bg-slate-50">
+    <section className="py-10 sm:py-10 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
-            Your Questions, Answered
+            Your Questions,<span className="text-[#007B8A]"> Answered</span>
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             Find answers to common questions about our services, caregivers, and how we support your family.

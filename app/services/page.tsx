@@ -14,7 +14,7 @@ export default function Services() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-20 sm:py-24 bg-gradient-to-b from-teal-50 to-white" aria-labelledby="hero-heading">
+        <section className="py-10 sm:py-20 bg-gradient-to-b from-teal-50 to-white" aria-labelledby="hero-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
               Our <span className="text-[#007B8A]">Home Care</span> Services
@@ -26,7 +26,7 @@ export default function Services() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-16 sm:py-20" aria-labelledby="services-heading">
+        <section className="py-1 sm:py-10" aria-labelledby="services-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 id="services-heading" className="sr-only">Our Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -56,15 +56,26 @@ export default function Services() {
                     <p className="mt-3 text-gray-600 text-sm flex-grow">{service.description}</p>
                   </div>
 
-                  <div className="px-6 pb-6 mt-auto">
-                    <Link
-                      href={`/services/${service.id}`}
-                      className="inline-flex items-center justify-center w-full bg-[#4CAF50] text-white py-2.5 rounded-lg font-semibold hover:bg-[#3e8e41] transition-all text-sm"
-                    >
-                      Learn More
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
-                  </div>
+                  <div className="px-6 pb-6 mt-auto grid grid-cols-2 gap-3">
+  {/* Call Now Button */}
+  <Link
+    href={`tel:+919876543210`}
+    className="inline-flex items-center justify-center bg-slate-100 border border-slate-200 text-slate-700 py-2.5 rounded-lg font-semibold hover:bg-slate-200 transition-all text-sm"
+  >
+    <Phone className="w-4 h-4 mr-2" />
+    Call Now
+  </Link>
+
+  {/* Learn More / Book Now Button */}
+  <Link
+    href={`/services/${service.id}`}
+    className="inline-flex items-center justify-center bg-[#4CAF50] text-white py-2.5 rounded-lg font-semibold hover:bg-[#3e8e41] transition-all text-sm"
+  >
+    Learn More
+    <ArrowRight className="ml-2 w-4 h-4" />
+  </Link>
+</div>
+
                 </div>
               ))}
             </div>

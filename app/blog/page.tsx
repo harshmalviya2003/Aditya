@@ -31,7 +31,7 @@ export default function Blog() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-teal-50 to-slate-50">
+        <section className="py-10 md:py-20 bg-gradient-to-b from-teal-50 to-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
               Our Health & Care <span className="text-[#007B8A]">Insights</span>
@@ -42,35 +42,8 @@ export default function Blog() {
           </div>
         </section>
 
-        {/* Featured Blog */}
-        <section className="py-16 sm:py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Article</h2>
-                <Link href={`/blog/${featuredBlog.id}`} className="block group">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div className="relative h-80 rounded-xl overflow-hidden">
-                           <Image src={featuredBlog.image} alt={featuredBlog.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                        </div>
-                        <div>
-                            <p className="text-sm font-semibold text-[#007B8A]">{featuredBlog.category}</p>
-                            <h3 className="mt-2 text-3xl font-bold text-gray-900 leading-tight">{featuredBlog.title}</h3>
-                            <p className="mt-4 text-gray-600 line-clamp-3">{featuredBlog.excerpt}</p>
-                            <div className="mt-6 flex items-center gap-4 text-sm text-gray-500">
-                                <div className="flex items-center">
-                                    <Image src={featuredBlog.authorAvatar} alt={featuredBlog.author} width={40} height={40} className="w-10 h-10 rounded-full mr-3" />
-                                    <span>{featuredBlog.author}</span>
-                                </div>
-                                <span>•</span>
-                                <span>{formatDate(featuredBlog.date)}</span>
-                            </div>
-                        </div>
-                    </div>
-                </Link>
-            </div>
-        </section>
-
         {/* Blog Grid with Filters */}
-        <section className="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
+        <section className="py-5 sm:py-20 bg-slate-50 border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
               {categories.map((category) => (

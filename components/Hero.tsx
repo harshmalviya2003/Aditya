@@ -59,7 +59,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 w-96 h-96 bg-cyan-200/50 rounded-full filter blur-2xl opacity-50"></div>
       <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-96 h-96 bg-teal-200/50 rounded-full filter blur-2xl opacity-50"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10 py-10 md:py-20">
         
         {/* Content */}
         <div className="space-y-6 text-center lg:text-left">
@@ -69,7 +69,7 @@ const Hero = () => {
                 <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
               ))}
             </div>
-            <span className="ml-3 text-base font-bold text-[#007B8A]">Rated 5.0 by 1000+ Families</span>
+            <span className="ml- text-base font-bold text-[#007B8A]">Rated 5.0 by 100+ Families</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
@@ -78,7 +78,7 @@ const Hero = () => {
           
           <p className="text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
             Certified caregivers providing personalized medical care at home. 
-            <span className="font-semibold text-[#007B8A]"> Same-day service available.</span> 
+            <span className="font-semibold text-[#007B8A]"> Same-day service available. </span> 
             Let us help your family today.
           </p>
 
@@ -89,8 +89,8 @@ const Hero = () => {
                   <Phone className="w-6 h-6 text-[#4CAF50]" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500">Call Now For Immediate Help</div>
-                  <div className="text-2xl font-bold text-[#007B8A]">+91 98765 43210</div>
+                  <div className="text-xs text-gray-500">Call Now For Immediate Help</div>
+                  <div className="text-xl font-bold text-[#007B8A]">+91 98765 43210</div>
                 </div>
               </div>
               <Link
@@ -104,7 +104,7 @@ const Hero = () => {
         </div>
 
         {/* Image Carousel */}
-        <div className="relative mt-8 lg:mt-0 h-[400px] sm:h-[500px] md:h-[600px]">
+        <div className="relative mt-8 lg:mt-0 h-[350px] sm:h-[400px] md:h-[500px]">
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-full">
             {/* Images with Fade Transition */}
             {images.map((image, index) => (

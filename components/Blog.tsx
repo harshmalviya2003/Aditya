@@ -59,12 +59,12 @@ const Blog = () => {
   };
 
   return (
-    <section className="py-20 sm:py-24 bg-white">
+    <section className="py-20 sm:py-24 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 px-4">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
-            Latest Insights & Care Tips
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+            Latest Insights & <span className="text-[#007B8A]"> Care Tips </span>
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             Stay informed with expert advice and the latest developments in home healthcare from our professional team.

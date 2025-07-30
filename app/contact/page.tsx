@@ -51,7 +51,7 @@ export default function Contact() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-teal-50 to-slate-50">
+        <section className="py-10 md:py-20 bg-gradient-to-b from-teal-50 to-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
               Get in <span className="text-[#007B8A]">Touch With Us</span>
@@ -63,7 +63,7 @@ export default function Contact() {
         </section>
 
         {/* Contact Form & Info Section */}
-        <section className="py-16 sm:py-20">
+        <section className="py-5 sm:py-">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               

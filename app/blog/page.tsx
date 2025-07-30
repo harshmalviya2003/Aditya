@@ -20,7 +20,7 @@ export default function Blog() {
   const sortedBlogs = blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   
   const featuredBlog = sortedBlogs[0];
-  const otherBlogs = sortedBlogs.slice(1);
+  const otherBlogs = sortedBlogs.slice(0);
   
   const filteredBlogs = selectedCategory === 'All'
     ? otherBlogs

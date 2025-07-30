@@ -75,7 +75,7 @@ const Header = () => {
           {/* Logo - Now responsive */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0">
-              <img src="/logo/loh.png" alt="Logo" className="w-full h-full object-cover" />
+              <img src="/logo/loh.png" alt="Logo" className="w-full h-full object-cover bg-[#FFF1DB]" />
             </div>
             <div>
               <h1 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">

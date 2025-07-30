@@ -57,13 +57,8 @@ export default function BlogPage({ params }: BlogPageProps) {
 
                 {/* --- ENHANCED: Metadata with better vertical alignment and spacing --- */}
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-4 text-sm text-gray-600 py-6 border-y border-gray-200">
-                  <div className="flex items-center">
-                    <Image src={blog.authorAvatar} alt={blog.author} width={40} height={40} className="w-10 h-10 rounded-full mr-3" />
-                    <div>
-                      <p className="font-semibold text-gray-800">{blog.author}</p>
-                      <p className="text-xs text-gray-500">Healthcare Expert</p>
-                    </div>
-                  </div>
+                  
+                
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-1.5 text-gray-500" />
                     <span>{formatDate(blog.date)}</span>

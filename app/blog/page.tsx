@@ -15,13 +15,13 @@ export default function Blog() {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   };
-  
+
   const categories = ['All', ...Array.from(new Set(blogs.map(blog => blog.category)))];
   const sortedBlogs = blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  
+
   const featuredBlog = sortedBlogs[0];
   const otherBlogs = sortedBlogs.slice(0);
-  
+
   const filteredBlogs = selectedCategory === 'All'
     ? otherBlogs
     : otherBlogs.filter(blog => blog.category === selectedCategory);
@@ -43,24 +43,8 @@ export default function Blog() {
         </section>
 
         {/* Blog Grid with Filters */}
-        <section className="py-5 sm:py-20 bg-slate-50 border-t border-slate-200">
+        <section className=" bg-slate-50 border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 ${
-                    selectedCategory === category
-                      ? "bg-[#007B8A] text-white shadow-md"
-                      : "bg-white text-gray-700 hover:bg-slate-100"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredBlogs.map((blog) => (
                 <article key={blog.id} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col group">
@@ -70,15 +54,17 @@ export default function Blog() {
                   <div className="p-6 flex-grow flex flex-col">
                     <p className="text-xs font-semibold text-[#007B8A] uppercase">{blog.category}</p>
                     <h3 className="mt-2 text-lg font-bold text-gray-900 flex-grow line-clamp-2">
-                        <Link href={`/blog/${blog.id}`} className="hover:text-[#007B8A] transition-colors">{blog.title}</Link>
+                      <Link href={`/blog/${blog.id}`} className="hover:text-[#007B8A] transition-colors">{blog.title}</Link>
                     </h3>
                     <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
                       <div className="flex items-center text-sm text-gray-500">
-                        <Image src={blog.authorAvatar} alt={blog.author} width={24} height={24} className="w-6 h-6 rounded-full mr-2" />
-                        <span>{blog.author}</span>
+                        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mr-2">
+                          <User className="w-4 h-4 text-[#007B8A]" />
+                        </div>                      
+                        <span>Home Care Agency</span>
                       </div>
                       <Link href={`/blog/${blog.id}`} className="text-sm font-semibold text-[#007B8A] flex items-center group-hover:text-teal-700">
-                        Read <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"/>
+                        Read <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </div>
                   </div>

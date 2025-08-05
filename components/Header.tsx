@@ -79,9 +79,9 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">
-                The Florence Nightingale
+                  Comfort Health 
               </h1>
-              <p className="text-xs md:text-sm text-[#007B8A] font-medium">Home Care Agency</p>
+              <p className="text-xs md:text-sm text-[#007B8A] font-medium">Home Care Services</p>
             </div>
           </Link>
 

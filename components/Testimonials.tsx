@@ -2,7 +2,7 @@
 
 import React, {useState } from 'react';
 import { getFeaturedTestimonials } from '@/data/testimonials';
-import { Star, Quote, Heart, Users, CheckCircle } from 'lucide-react';
+import { Star, Quote, Heart, Users, CheckCircle, User } from 'lucide-react';
 import Image from 'next/image';
 
 const Testimonials = () => {
@@ -52,13 +52,11 @@ const Testimonials = () => {
                   "{testimonial.content}"
                 </blockquote>
                 <div className="mt-6 flex items-center">
-                  <Image
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-[#007B8A]/50"
-                  />
+                   
+                    <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4 border-2 border-[#007B8A]/50">
+                      <User className="w-6 h-6 text-[#007B8A]" />
+                    </div>
+                  
                   <div>
                     <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
                     <p className="text-sm text-[#007B8A] font-medium">{testimonial.relationship}</p>
@@ -74,7 +72,7 @@ const Testimonials = () => {
       </div>
       
       {/* Trust Indicators Section */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      {/* <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div className="bg-white/60 p-6 rounded-xl border border-gray-200/80">
             <Heart className="w-10 h-10 text-[#007B8A] mx-auto mb-3" />
@@ -92,7 +90,7 @@ const Testimonials = () => {
             <p className="text-gray-600">Certified Caregivers</p>
           </div>
         </div>
-      </div>
+      </div> */}
       
       {/* CSS for custom marquee animation */}
       <style jsx>{`

@@ -6,38 +6,38 @@ import { Phone, Heart, Star } from 'lucide-react';
 
 const Hero = () => {
   const images = [
-    "/services/1.jpg",
-    "/services/2.jpg",
-    "/services/3.jpg",
-    "/services/4.jpg",
-    "/services/5.jpg"
+    "/services/caretaker.jpg",
+    "/services/homenursing.jpg",
+    "/services/eldercare.jpg",
+    "/services/paralysicare.jpg",
+    "/services/physiotherapy.jpg"
   ];
 
   const testimonials = [
     {
-      quote: "They saved us during an emergency!",
-      text: "The nurse arrived within 2 hours when my father needed urgent care. Professional and compassionate service.",
-      author: "Rajesh K., Mumbai"
+      quote: "Exceptional home care in Indore!",
+      text: "Comfort Health Home provided urgent home care in Indore for my father. The nurse arrived within hours, offering professional and compassionate service.",
+      author: "Rajesh K., Indore"
     },
     {
-      quote: "Absolutely compassionate care.",
-      text: "Finding reliable help was a struggle until we found them. The caregiver is like family to us now.",
-      author: "Priya S., Delhi"
+      quote: "Compassionate care in Rau.",
+      text: "Finding reliable home care in Rau was tough until we found Comfort Health Home. The caregiver feels like family now, providing excellent support.",
+      author: "Priya S., Rau"
     },
     {
-      quote: "A service you can truly trust.",
-      text: "The team is incredibly responsive and professional. They made a difficult time much more manageable.",
-      author: "Amit V., Bangalore"
+      quote: "Trusted home care in Ujjain.",
+      text: "Comfort Health Home’s team in Ujjain is responsive and professional, making a difficult time much easier with their reliable home care services.",
+      author: "Amit V., Ujjain"
     },
     {
-      quote: "Five-star service all the way!",
-      text: "From the first call to the daily care, everything has been exceptional. Highly recommended.",
-      author: "Sunita M., Chennai"
+      quote: "Five-star home care in Dewas!",
+      text: "From the first call to daily care, Comfort Health Home’s services in Dewas have been exceptional. Highly recommend their home care solutions.",
+      author: "Sunita M., Dewas"
     },
     {
-      quote: "Professional and very skilled.",
-      text: "The nurse was highly skilled and handled all medical needs with expertise. We felt completely at ease.",
-      author: "Vikram R., Pune"
+      quote: "Skilled nursing in Indore.",
+      text: "The nurse from Comfort Health Home in Indore was highly skilled, handling all medical needs with expertise. We felt completely at ease.",
+      author: "Vikram R., Indore"
     }
   ];
 
@@ -65,21 +65,22 @@ const Hero = () => {
         <div className="space-y-6 text-center lg:text-left">
           <div className="inline-flex items-center bg-white shadow-md px-4 py-2 rounded-full">
             <div className="flex items-center">
-              {[...Array(5)].map((_, i) => (
+              {[...Array(4)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
               ))}
+              <Star className="w-5 h-5 text-yellow-400 fill-current" style={{ clipPath: 'inset(0 50% 0 0)' }} />
             </div>
-            <span className="ml- text-base font-bold text-[#007B8A]">Rated 5.0 by 100+ Families</span>
+            <span className="ml-2 text-base font-bold text-[#007B8A]">Trusted by 100+ Families for Quality Care</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Expert <span className="text-[#007B8A]">In-Home Medical</span> Care For Your Loved Ones
+            Professional <span className="text-[#007B8A]">Home Care Solutions</span> for Your Loved Ones
           </h1>
           
           <p className="text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-            Certified caregivers providing personalized medical care at home. 
-            <span className="font-semibold text-[#007B8A]"> Same-day service available. </span> 
-            Let us help your family today.
+            Comfort Health Home provides certified caregivers for personalized home care in Indore, Mhow, Rau, Ujjain, and Dewas. 
+            <span className="font-semibold text-[#007B8A]"> Same-day home care services available. </span> 
+            Support your loved ones with our expert care today.
           </p>
 
           <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 max-w-md mx-auto lg:mx-0">
@@ -89,12 +90,12 @@ const Hero = () => {
                   <Phone className="w-6 h-6 text-[#4CAF50]" />
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500">Call Now For Immediate Help</div>
+                  <div className="text-xs text-gray-500">Call Now For Home Care Assistance</div>
                   <div className="text-xl font-bold text-[#007B8A]">+91 98765 43210</div>
                 </div>
               </div>
               <Link
-                href="/contact"
+                href="https://wa.me/+919876543210?text=Hello,%20I%20need%20Home%20care%20Service"
                 className="inline-flex items-center justify-center bg-[#4CAF50] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3e8e41] transition-all duration-200 whitespace-nowrap text-base w-full sm:w-auto"
               >
                 Enquire Now
@@ -111,7 +112,7 @@ const Hero = () => {
               <img
                 key={index}
                 src={image}
-                alt={`Care service ${index + 1}`}
+                alt={`Home care service in ${['Indore', 'Rau', 'Mhow', 'Ujjain', 'Dewas', 'Indore'][index]}`}
                 className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
                   index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                 }`}
@@ -128,11 +129,12 @@ const Hero = () => {
                   <p className="text-base font-semibold text-gray-900">"{currentTestimonial.quote}"</p>
                   <p className="text-sm text-gray-600 mt-1 hidden sm:block">{currentTestimonial.text}</p>
                   <div className="flex items-center justify-between mt-2">
-                     <span className="text-sm font-medium text-gray-800">- {currentTestimonial.author}</span>
+                    <span className="text-sm font-medium text-gray-800">- {currentTestimonial.author}</span>
                     <div className="flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                        ))}
+                      {[...Array(4)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                      ))}
+                      <Star className="w-4 h-4 text-yellow-400 fill-current" style={{ clipPath: 'inset(0 50% 0 0)' }} />
                     </div>
                   </div>
                 </div>
@@ -148,7 +150,7 @@ const Hero = () => {
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                   index === currentImageIndex ? 'bg-[#007B8A] w-6' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
-                aria-label={`Go to image ${index + 1}`}
+                aria-label={`Go to home care image ${index + 1}`}
               />
             ))}
           </div>

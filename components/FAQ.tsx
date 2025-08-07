@@ -19,28 +19,28 @@ const FAQ = () => {
 
   const faqData: FAQItem[] = [
     {
-      question: "What services does The Florence Nightingale Home Care Agency provide?",
-      answer: "We offer comprehensive home care services including personal care, companionship, medical support, dementia and Alzheimer's care, respite care, and post-hospital recovery. Our services are tailored to meet individual needs, from a few hours a day to 24/7 care."
+      question: "What home care services does Comfort Health Home provide in Indore, Rau, Mhow, Ujjain, and Dewas?",
+      answer: "Comfort Health Home offers comprehensive home care services in Indore, Rau, Mhow, Ujjain, and Dewas, including caretaker services, home nursing, elder care, paralysis care, newborn and Japa care, post-operative care, and physiotherapy. Our services are tailored to meet individual needs, providing personalized care from a few hours to 24/7 support."
     },
     {
-      question: "Are your caregivers licensed and trained?",
-      answer: "Yes, all our caregivers are thoroughly screened, licensed, and professionally trained. They undergo background checks, skills assessments, and continuous training. Our team includes registered nurses and certified nursing assistants with specialized home healthcare training."
+      question: "Are Comfort Health Home’s caregivers trained for home care in Indore and nearby areas?",
+      answer: "Yes, all caregivers at Comfort Health Home are licensed, thoroughly screened, and professionally trained to provide top-quality home care in Indore, Rau, Mhow, Ujjain, and Dewas. They undergo rigorous background checks, skills assessments, and ongoing training to ensure exceptional care for conditions like paralysis, post-operative recovery, and elder care."
     },
     {
-      question: "How quickly can you start providing care services?",
-      answer: "We understand care needs can be urgent. We can typically start care within 24-48 hours of the initial consultation. For emergencies, same-day service is often available depending on the care required and caregiver availability."
+      question: "How quickly can Comfort Health Home start home care services in Ujjain or Dewas?",
+      answer: "Comfort Health Home can typically begin home care services in Ujjain, Dewas, Indore, Mhow, or Rau within 24-48 hours after the initial consultation. For urgent cases, same-day home care services may be available depending on the specific care needs and caregiver availability."
     },
     {
-      question: "What are your rates and payment options?",
-      answer: "Rates vary based on the level of care and hours needed. We provide transparent pricing with no hidden fees and accept private pay, long-term care insurance, and work with some healthcare funding programs to offer flexible payment options."
+      question: "What are the rates for home nursing and physiotherapy by Comfort Health Home in Indore?",
+      answer: "Rates for home nursing and physiotherapy at Comfort Health Home in Indore, Rau, Mhow, Ujjain, and Dewas vary based on care level and hours required. We offer transparent pricing with no hidden fees, accepting private pay, long-term care insurance, and select healthcare funding programs for flexible payment options."
     },
     {
-      question: "Can family members be involved in the care planning process?",
-      answer: "Absolutely! We encourage family involvement in creating and updating care plans. We believe in a team approach and provide regular updates to ensure the best possible outcomes for your loved one."
+      question: "Can families in Rau or Ujjain participate in creating care plans with Comfort Health Home?",
+      answer: "Absolutely, Comfort Health Home encourages family involvement in care planning for clients in Rau, Mhow, Ujjain, Indore, and Dewas. We collaborate with families to create and update personalized care plans, ensuring regular updates and a team-based approach for the best outcomes."
     },
     {
-      question: "Do you provide care for specific medical conditions?",
-      answer: "Yes, our team is experienced in caring for individuals with various conditions like diabetes, heart disease, stroke recovery, dementia, and post-surgical needs. Caregivers receive condition-specific training to ensure expert support."
+      question: "Does Comfort Health Home provide specialized care for conditions like paralysis in Dewas?",
+      answer: "Yes, Comfort Health Home specializes in home care for conditions such as paralysis, diabetes, stroke recovery, and post-surgical needs in Dewas, Indore, Rau, Mhow, and Ujjain. Our caregivers receive condition-specific training to deliver expert, compassionate care tailored to each client’s needs."
     },
   ];
 
@@ -50,10 +50,10 @@ const FAQ = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
-            Your Questions,<span className="text-[#007B8A]"> Answered</span>
+            Your Questions About Home Care in Indore, Rau, Mhow, Ujjain, and Dewas,<span className="text-[#007B8A]"> Answered</span>
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Find answers to common questions about our services, caregivers, and how we support your family.
+            Learn more about Comfort Health Home’s services, caregivers, and how we support families with personalized care in Indore, Rau, Mhow, Ujjain, and Dewas.
           </p>
         </div>
 
@@ -95,24 +95,24 @@ const FAQ = () => {
         {/* Why Choose Us Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
             <div className="text-center">
-                <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Why Trust Our Care?</h2>
-                <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">We provide more than just services; we deliver peace of mind.</p>
+                <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Why Trust Comfort Health Home?</h2>
+                <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">We deliver exceptional home care in Indore, Rau, Mhow, Ujjain, and Dewas, ensuring peace of mind for your family.</p>
             </div>
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
                 <div className="p-6">
                     <Shield className="w-12 h-12 text-[#007B8A] mx-auto mb-4" />
                     <h3 className="text-lg font-semibold text-gray-900">Certified & Screened</h3>
-                    <p className="mt-2 text-gray-600">All caregivers are licensed, insured, and thoroughly background-checked.</p>
+                    <p className="mt-2 text-gray-600">All caregivers are licensed, insured, and thoroughly background-checked for trusted care in Indore and beyond.</p>
                 </div>
                 <div className="p-6">
                     <Heart className="w-12 h-12 text-[#007B8A] mx-auto mb-4" />
                     <h3 className="text-lg font-semibold text-gray-900">Compassionate Staff</h3>
-                    <p className="mt-2 text-gray-600">Our team is chosen for their empathy and dedication to dignified care.</p>
+                    <p className="mt-2 text-gray-600">Our team is chosen for their empathy and dedication to dignified home care in Rau, Mhow, Ujjain, and Dewas.</p>
                 </div>
                 <div className="p-6">
                     <Users className="w-12 h-12 text-[#007B8A] mx-auto mb-4" />
                     <h3 className="text-lg font-semibold text-gray-900">Personalized Plans</h3>
-                    <p className="mt-2 text-gray-600">We create custom care plans that are tailored to your unique needs.</p>
+                    <p className="mt-2 text-gray-600">We create custom care plans tailored to your unique needs in Indore, Rau, Mhow, Ujjain, and Dewas.</p>
                 </div>
             </div>
         </div>

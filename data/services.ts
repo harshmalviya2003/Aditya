@@ -14,111 +14,190 @@ export interface Service {
 }
 
 export const services: Service[] = [
-  {
-    id: "newborn-mother-care",
-    title: "New Born Baby and Mother Care",
-    description: "Professional care for newborns and postpartum mothers in the comfort of your home.",
-    fullDescription: "Our specialized newborn and mother care services provide comprehensive support during the critical postpartum period. Our trained nurses assist with newborn care, breastfeeding support, and the mother's recovery.",
-    features: [
-      "Newborn bathing and hygiene",
-      "Umbilical cord care",
-      "Breastfeeding assistance",
-      "Postpartum recovery support",
-      "Sleep pattern guidance",
-      "Newborn health monitoring"
-    ],
-    image: "/services/1.jpg",
-    price: "Starting from ₹1500/day",
-    content: [
-      {
-        heading: "Comprehensive Postnatal Support",
-        content: "The arrival of a new baby is a joyous occasion, but it can also be overwhelming. Our caregivers provide expert support to ensure both mother and baby are healthy and comfortable. We handle everything from bathing and diapering to monitoring the baby's health, allowing the mother to focus on recovery and bonding."
-      },
-      {
-        heading: "Expert Guidance for New Mothers",
-        content: "Our nurses are trained in lactation support and can provide invaluable guidance on breastfeeding techniques, feeding schedules, and addressing common challenges. We also offer emotional support and education on postpartum recovery, helping mothers navigate this new phase with confidence."
-      }
-    ]
-  },
-  {
-    id: "patient-caretaker",
-    title: "Care Taker for Patient",
-    description: "Dedicated caregivers providing round-the-clock assistance for patients at home.",
-    fullDescription: "Our professional patient caretakers provide compassionate, personalized care for individuals needing assistance with daily activities and medical needs in their home environment.",
-    features: [
-      "24/7 monitoring",
-      "Medication management",
-      "Personal hygiene assistance",
-      "Mobility support",
-      "Meal preparation",
-      "Vital signs monitoring"
-    ],
-    image: "/services/2.jpg",
-    price: "Starting from ₹1000/day",
-    content: [
+  
+    {
+      id: "care-taker",
+      title: "Care Taker For Patient",
+      description: "Professional caretaker services for patients in Indore, Rau,  Mhow, Ujjain, and Dewas, ensuring compassionate and dedicated support.",
+      fullDescription: "Our caretaker services provide personalized assistance for patients, offering daily care, companionship, and support to improve their quality of life in the comfort of their home in Indore, Rau, Mhow, Ujjain, and Dewas.",
+      features: [
+        "Daily living assistance",
+        "Medication reminders",
+        "Personal hygiene support",
+        "Mobility assistance",
+        "Emotional support",
+        "Meal preparation"
+      ],
+      image: "/services/1.png",
+      price: "Starting from ₹1500/day",
+      content: [
         {
-            heading: "Personalized Daily Assistance",
-            content: "Our caregivers assist with all activities of daily living, including bathing, dressing, grooming, and toileting. We ensure that the patient's personal hygiene is maintained while respecting their dignity and privacy. Our goal is to provide support that enables as much independence as possible."
+          heading: "Compassionate Care in Indore, Rau, Mhow, Ujjain, and Dewas",
+          content: "Our trained caretakers offer personalized support to patients, helping with daily activities such as bathing, dressing, and eating. We focus on creating a comfortable and nurturing environment tailored to individual needs."
         },
         {
-            heading: "Medical and Nutritional Support",
-            content: "We manage medication schedules, monitor vital signs, and prepare nutritious meals according to dietary requirements. Our team works closely with the patient's doctors to ensure the care plan is followed precisely, providing families with peace of mind."
+          heading: "Dedicated Support for Well-Being",
+          content: "Our caretakers work closely with families to ensure patients receive consistent care and companionship, promoting physical and emotional well-being while maintaining dignity and independence."
         }
-    ]
-  },
-    // ... Add the `content` array to all other service objects in a similar way ...
-  {
-    id: "elder-care",
-    title: "Elder Care Services At Home",
-    description: "Comprehensive care solutions for elderly individuals to maintain independence at home.",
-    fullDescription: "Our elder care services are designed to help seniors maintain their quality of life while receiving the support they need in the comfort and familiarity of their own home.",
-    features: [
-      "Daily living assistance",
-      "Companionship",
-      "Medication reminders",
-      "Light housekeeping",
-      "Exercise assistance",
-      "Transportation to appointments"
-    ],
-    image: "/services/3.jpg",
-    price: "Starting from ₹900/day",
-    content: [
+      ]
+    },
+    {
+      id: "home-nursing",
+      title: "Home Nursing Services",
+      description: "Skilled nursing care at home in Indore, Rau, Mhow, Ujjain, and Dewas for comprehensive health management.",
+      fullDescription: "Our home nursing services provide professional medical care at home, delivered by qualified nurses to ensure patients in Indore, Rau, Mhow, Ujjain, and Dewas receive the best possible care without hospital visits.",
+      features: [
+        "Wound care",
+        "Injection administration",
+        "Vital signs monitoring",
+        "Catheter care",
+        "Post-surgical care",
+        "Chronic illness management"
+      ],
+      image: "/services/2.png",
+            price: "Starting from ₹2000/day",
+      content: [
         {
-            heading: "Promoting Independence with Dignity",
-            content: "Our primary goal in elder care is to help seniors live safely and independently at home for as long as possible. We provide assistance with daily tasks while encouraging active participation. Our caregivers are not just helpers but also companions who engage in conversations, games, and hobbies."
+          heading: "Professional Nursing at Your Doorstep",
+          content: "Our skilled nurses provide a range of medical services, from administering medications to managing chronic conditions, ensuring high-quality care in the comfort of your home in Indore, Rau, Mhow, Ujjain, and Dewas."
         },
         {
-            heading: "Holistic Approach to Senior Wellness",
-            content: "We focus on the overall well-being of our senior clients, including physical, mental, and emotional health. This includes medication reminders, accompanying them on walks, ensuring proper nutrition, and providing a friendly face to combat loneliness and isolation."
+          heading: "Tailored Care Plans",
+          content: "We create customized care plans in collaboration with doctors to meet the specific health needs of each patient, ensuring effective treatment and recovery."
         }
-    ]
-  },
-  {
-    id: "icu-care",
-    title: "ICU Care At Home",
-    description: "Critical care services bringing ICU-level monitoring and treatment to your home.",
-    fullDescription: "Our ICU-at-home service provides hospital-level care for critically ill patients who prefer to recover in the comfort of their own home, with specialized equipment and trained staff.",
-    features: [
-      "Ventilator care",
-      "Cardiac monitoring",
-      "Tracheostomy care",
-      "IV medication administration",
-      "Critical care nursing",
-      "Emergency response"
-    ],
-    image: "/services/7.jpg",
-    price: "Starting from ₹2500/day",
-    content: [
-      {
-        heading: "Advanced Medical Care at Home",
-        content: "We bring the essential elements of an ICU to your home. Our service includes state-of-the-art medical equipment like ventilators, cardiac monitors, and infusion pumps, all managed by highly trained critical care nurses. This ensures continuous, high-quality medical supervision in a familiar environment."
-      },
-      {
-        heading: "A Team-Based, Coordinated Approach",
-        content: "Our home ICU care is delivered by a multidisciplinary team, including critical care nurses, respiratory therapists, and physicians who collaborate to manage the patient's condition. We maintain constant communication with the primary treating doctor to ensure seamless and coordinated care, reducing the risk of complications."
-      }
-    ]
-  }
+      ]
+    },
+    {
+      id: "elder-care",
+      title: "Elder Care Services At Home",
+      description: "Specialized elder care services in Indore, Rau, Mhow, Ujjain, and Dewas for seniors to live comfortably and independently.",
+      fullDescription: "Our elder care services are designed to support seniors with daily activities, medical needs, and companionship, enabling them to live with dignity and comfort in their homes across Indore, Rau, Mhow, Ujjain, and Dewas.",
+      features: [
+        "Personal care assistance",
+        "Medication management",
+        "Mobility support",
+        "Companionship",
+        "Health monitoring",
+        "Nutritional guidance"
+      ],
+      image: "/services/3.png",
+            price: "Starting from ₹1800/day",
+      content: [
+        {
+          heading: "Holistic Care for Seniors",
+          content: "Our elder care services include assistance with daily tasks, medication reminders, and health monitoring, ensuring seniors in Indore, Rau, Mhow, Ujjain, and Dewas live comfortably and safely."
+        },
+        {
+          heading: "Promoting Independence",
+          content: "We focus on empowering seniors to maintain their independence while providing the necessary support to enhance their quality of life and well-being."
+        }
+      ]
+    },
+    {
+      id: "paralysis-care",
+      title: "Nursing Care of Paralysis Patient At Home",
+      description: "Specialized nursing care for paralysis patients in Indore, Rau, Mhow, Ujjain, and Dewas, ensuring comfort and recovery support.",
+      fullDescription: "Our nursing care for paralysis patients provides specialized support, including mobility assistance, physical therapy coordination, and medical care, delivered at home in Indore, Rau, Mhow, Ujjain, and Dewas.",
+      features: [
+        "Mobility assistance",
+        "Pressure sore prevention",
+        "Physical therapy support",
+        "Bladder and bowel care",
+        "Medication administration",
+        "Emotional support"
+      ],
+      image: "/services/4.png",
+      price: "Starting from ₹2200/day",
+      content: [
+        {
+          heading: "Specialized Care for Paralysis Patients",
+          content: "Our trained nurses provide comprehensive care for paralysis patients, including assistance with daily activities, preventing complications, and coordinating with physiotherapists in Indore, Rau, Mhow, Ujjain, and Dewas."
+        },
+        {
+          heading: "Improving Quality of Life",
+          content: "We focus on personalized care plans to manage symptoms, enhance comfort, and support recovery, ensuring patients live with dignity in their home environment."
+        }
+      ]
+    },
+    {
+      id: "newborn-japa",
+      title: "New Born Baby And Japa Care",
+      description: "Expert care for newborns and mothers in Indore, Rau, Mhow, Ujjain, and Dewas, including traditional Japa services.",
+      fullDescription: "Our newborn and Japa care services provide professional support for new mothers and their babies, combining modern medical care with traditional Japa practices in Indore, Rau, Mhow, Ujjain, and Dewas.",
+      features: [
+        "Newborn health monitoring",
+        "Breastfeeding support",
+        "Postpartum care",
+        "Traditional Japa services",
+        "Infant hygiene",
+        "Maternal nutrition guidance"
+      ],
+      image: "/services/5.png",
+      price: "Starting from ₹2000/day",
+      content: [
+        {
+          heading: "Comprehensive Newborn Care",
+          content: "Our trained caregivers provide expert care for newborns, including feeding, bathing, and health monitoring, ensuring their well-being in Indore, Rau, Mhow, Ujjain, and Dewas."
+        },
+        {
+          heading: "Traditional Japa Support",
+          content: "Our Japa services include postpartum care for mothers, such as massage, nutrition advice, and emotional support, blending tradition with modern care practices."
+        }
+      ]
+    },
+    {
+      id: "post-operative",
+      title: "Post Operative Nursing Care At Home",
+      description: "Professional post-operative nursing care in Indore, Rau, Mhow, Ujjain, and Dewas for a smooth recovery.",
+      fullDescription: "Our post-operative nursing care services provide expert medical support at home, ensuring a safe and comfortable recovery for patients in Indore, Rau, Mhow, Ujjain, and Dewas after surgery.",
+      features: [
+        "Wound care and dressing",
+        "Pain management",
+        "Medication administration",
+        "Mobility assistance",
+        "Infection prevention",
+        "Doctor coordination"
+      ],
+      image: "/services/6.png",
+      price: "Starting from ₹2200/day",
+      content: [
+        {
+          heading: "Safe Recovery at Home",
+          content: "Our skilled nurses provide comprehensive post-operative care, including wound management, pain relief, and monitoring for complications, ensuring a smooth recovery in Indore, Rau, Mhow, Ujjain, and Dewas."
+        },
+        {
+          heading: "Personalized Post-Surgical Support",
+          content: "We work closely with your doctor to create a tailored care plan, helping patients regain strength and independence while minimizing the risk of post-surgical complications."
+        }
+      ]
+    },
+    {
+      id: "physiotherapy",
+      title: "Physiotherapy At Home",
+      description: "Expert physiotherapy services in Indore, Rau, Mhow, Ujjain, and Dewas to aid recovery and mobility.",
+      fullDescription: "Our physiotherapy services bring professional rehabilitation to your home in Indore, Rau, Mhow, Ujjain, and Dewas, helping patients recover mobility, strength, and function through customized therapy plans.",
+      features: [
+        "Pain management therapy",
+        "Mobility exercises",
+        "Strength training",
+        "Post-surgical rehabilitation",
+        "Neurological physiotherapy",
+        "Home exercise plans"
+      ],
+      image: "/services/7.png",
+      price: "Starting from ₹1500/session",
+      content: [
+        {
+          heading: "Professional Physiotherapy in Indore, Mhow, Rau, Mhow, Ujjain, and Dewas",
+          content: "Our licensed physiotherapists provide personalized therapy sessions at home, addressing conditions like joint pain, muscle weakness, and post-surgical recovery to improve mobility and quality of life."
+        },
+        {
+          heading: "Customized Rehabilitation Plans",
+          content: "We design individualized exercise and therapy programs to meet specific recovery goals, ensuring effective treatment and long-term health benefits."
+        }
+      ]
+    }
+  
   // Make sure to add the content block to ALL your service objects in the array.
 ];
 

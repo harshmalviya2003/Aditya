@@ -90,29 +90,29 @@ const Services = () => {
 
         {/* CTA Section */}
         <div className="mt-20 text-center bg-gradient-to-r from-[#007B8A] to-teal-600 rounded-2xl p-8 sm:p-12">
-          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-            Need Immediate Assistance or Have Questions?
-          </h3>
-          <p className="text-white/80 max-w-2xl mx-auto mb-8">
-            Our care coordinators are available 24/7 to help you find the right solution for your loved ones.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="tel:+919876543210"
-              className="inline-flex items-center justify-center bg-white text-[#007B8A] px-8 py-3 rounded-lg font-semibold transition-transform hover:scale-105 shadow-lg w-full sm:w-auto"
-            >
-              <Phone className="w-5 h-5 mr-3" />
-              +91 98765 43210
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-white/20 text-white px-8 py-3 rounded-lg font-semibold transition-transform hover:scale-105 hover:bg-white/30 w-full sm:w-auto"
-            >
-              Request a Callback
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
-        </div>
+  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+    Need Home Care Assistance in Indore, Rau, Mhow, Ujjain, or Dewas?
+  </h3>
+  <p className="text-white/80 max-w-2xl mx-auto mb-8">
+    Comfort Health Home’s care coordinators are available 24/7 to provide personalized home care solutions for your loved ones in Indore, Rau, Mhow, Ujjain, and Dewas.
+  </p>
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <Link
+      href="tel:+919876543210"
+      className="inline-flex items-center justify-center bg-white text-[#007B8A] px-8 py-3 rounded-lg font-semibold transition-transform hover:scale-105 shadow-lg w-full sm:w-auto"
+    >
+      <Phone className="w-5 h-5 mr-3" />
+      +91 98765 43210
+    </Link>
+    <Link
+      href="https://wa.me/+919876543210?text=Hello,%20I%20Need%20Home%20Care%20Service"
+      className="inline-flex items-center justify-center bg-white/20 text-white px-8 py-3 rounded-lg font-semibold transition-transform hover:scale-105 hover:bg-white/30 w-full sm:w-auto"
+    >
+      Request a Callback
+      <ArrowRight className="ml-2 w-5 h-5" />
+    </Link>
+  </div>
+</div>
       </div>
     </section>
   );

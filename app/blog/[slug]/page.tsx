@@ -112,9 +112,9 @@ export default function BlogPage({ params }: BlogPageProps) {
                   <div className="bg-teal-50 p-6 rounded-xl border border-teal-100 text-center">
                     <h3 className="text-xl font-bold text-gray-900">Need Professional Care?</h3>
                     <p className="mt-2 text-sm text-gray-600">Our expert team is ready to help. Get a free, no-obligation consultation today.</p>
-                    <a href="tel:+919876543210" className="mt-5 inline-flex w-full items-center justify-center bg-[#007B8A] text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-teal-800 transition-colors shadow-sm">
+                    <a href="tel:+919479365137" className="mt-5 inline-flex w-full items-center justify-center bg-[#007B8A] text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-teal-800 transition-colors shadow-sm">
                       <Phone className="w-4 h-4 mr-2" />
-                      Call +91 98765 43210
+                      Call +91-94793-65137
                     </a>
                   </div>
 

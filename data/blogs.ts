@@ -71,7 +71,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Sarah Johnson",
     date: "2025-07-30",
     readTime: "8 min read",
-    image: "https://images.pexels.com/photos/7551428/pexels-photo-7551428.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/1.jpg",
     category: "Home Care",
     tags: [
       "home care services in Indore",
@@ -137,7 +137,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Anil Sharma",
     date: "2025-07-30",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/6129236/pexels-photo-6129236.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/2.jpg",
     category: "Home Care",
     tags: [
       "Home care services in Indore",
@@ -203,7 +203,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Priya Malhotra",
     date: "2025-07-30",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/7551624/pexels-photo-7551624.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/3.jpg",
     category: "Home Care",
     tags: [
       "Home care services in Indore",
@@ -270,7 +270,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Neha Gupta",
     date: "2025-07-30",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/4.jpg",
     category: "Home Care",
     tags: [
       "Home care services in Indore",
@@ -337,7 +337,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Vikram Singh",
     date: "2025-07-30",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/5997046/pexels-photo-5997046.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/5.jpg",
     category: "Home Care",
     tags: [
       "Home care services in Indore",
@@ -404,7 +404,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Meera Patel",
     date: "2025-07-30",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/5938357/pexels-photo-5938357.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/6.jpg",
     category: "Home Care",
     tags: [
       "Home care services in Indore",
@@ -471,7 +471,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Sanjay Verma",
     date: "2025-07-30",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/7551667/pexels-photo-7551667.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/7.jpg",
     category: "Home Care",
     tags: [
       "Home care services in Indore",
@@ -538,7 +538,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Rakesh Jain",
     date: "2025-07-30",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/6129234/pexels-photo-6129234.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/8.jpg",
     category: "Home Care",
     tags: [
       "Home care services in Indore",
@@ -605,7 +605,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Anjali Sharma",
     date: "2025-07-30",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/7551622/pexels-photo-7551622.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/9.jpg",
     category: "Home Care",
     tags: [
       "Home care services in Indore",
@@ -660,7 +660,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Anil Sharma",
     date: "2025-08-02",
     readTime: "6 min read",
-    image: "https://images.pexels.com/photos/7551678/pexels-photo-7551678.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/10.jpg",
     category: "Elder Care",
     tags: [
       "home care services in Indore",
@@ -714,7 +714,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Priya Mehra",
     date: "2025-08-02",
     readTime: "7 min read",
-    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/11.jpg",
     category: "Home Care Technology",
     tags: [
       "home care services in Indore",
@@ -768,7 +768,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Neha Gupta",
     date: "2025-08-02",
     readTime: "6 min read",
-    image: "https://images.pexels.com/photos/5997049/pexels-photo-5997049.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/12.jpg",
     category: "Elder Care",
     tags: [
       "home care services in Indore",
@@ -834,7 +834,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
       "affordable home nursing services in Indore"
     ]
   },
- {
+  {
     id: "qualities-professional-caregiver-indore",
     title: "Top 7 Qualities to Look for in a Professional Caregiver in 2025",
     authorAvatar: "https://randomuser.me/api/portraits/women/99.jpg",
@@ -884,7 +884,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Neha Gupta",
     date: "2025-08-02",
     readTime: "6 min read",
-    image: "https://images.pexels.com/photos/7551680/pexels-photo-7551680.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/13.jpg",
     category: "Home Care",
     tags: [
       "home health care Indore",
@@ -972,7 +972,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Neha Gupta",
     date: "2025-08-05",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/7551680/pexels-photo-7551680.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/14.jpg",
     category: "Home Care",
     tags: [
       "home health care in Indore",
@@ -1058,7 +1058,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Neha Gupta",
     date: "2025-08-05",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/7551680/pexels-photo-7551680.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/15.jpg",
     category: "Home Care",
     tags: [
       "home health care in Indore",
@@ -1144,7 +1144,7 @@ Calling an agency for a home assessment clarifies costs and ensures the best fit
     author: "Dr. Neha Gupta",
     date: "2025-08-05",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/7551680/pexels-photo-7551680.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    image: "/blog/16.jpg",
     category: "Home Care",
     tags: [
       "home health care in Indore",

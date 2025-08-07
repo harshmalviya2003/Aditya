@@ -40,14 +40,17 @@ export default function ServicePage({ params }: ServicePageProps) {
                 <p className="mt-4 text-lg text-gray-600 leading-relaxed">
                   {service.fullDescription}
                 </p>
-                {service.price && (
-                  <div className="mt-6 text-2xl font-bold text-[#007B8A]">{service.price}</div>
-                )}
+                  
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Link href="/contact" className="inline-flex items-center justify-center bg-[#4CAF50] text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-[#3e8e41] transition-colors shadow-lg">
+                <a
+                    href={`https://wa.me/+919876543210?text=${encodeURIComponent(`Hello, I want to request the "${service.title}" service`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-[#4CAF50] text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-[#3e8e41] transition-colors shadow-lg"
+                  >
                     Request This Service
-                  </Link>
-                   <a href="tel:+919876543210" className="inline-flex items-center justify-center bg-white border-2 border-teal-200 text-teal-800 px-8 py-3.5 rounded-lg font-semibold hover:bg-teal-50 transition-colors">
+                  </a>
+                   <a href="tel:+919479365137" className="inline-flex items-center justify-center bg-white border-2 border-teal-200 text-teal-800 px-8 py-3.5 rounded-lg font-semibold hover:bg-teal-50 transition-colors">
                     <Phone className="mr-2 w-5 h-5" />
                     Call for Info
                   </a>

@@ -48,7 +48,7 @@ const CTABanner = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               
               <Link
-      href="https://wa.me/+919876543210?text=Hello,%20I%20need%20Home%20care%20Service"
+      href="https://wa.me/+919479365137?text=Hello,%20I%20need%20Home%20care%20Service"
       className="inline-flex items-center justify-center bg-white text-[#007B8A] px-8 py-3.5 rounded-lg font-bold text-base transition-transform hover:scale-105 shadow-lg"
     >
       Request a Callback
@@ -59,7 +59,7 @@ const CTABanner = () => {
                 className="inline-flex items-center justify-center bg-transparent border-2 border-white/50 text-white px-8 py-3.5 rounded-lg font-bold text-base transition-colors hover:bg-white/10"
               >
                 <Phone className="mr-3 w-5 h-5" />
-                Call +91 98765 43210
+                Call +91 94793 65137
               </a>
             </div>
           </div>

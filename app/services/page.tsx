@@ -52,14 +52,13 @@ export default function Services() {
                   
                   <div className="p-6 flex-grow flex flex-col">
                     <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="mt-1 text-base font-semibold text-[#007B8A]">{service.price}</p>
                     <p className="mt-3 text-gray-600 text-sm flex-grow">{service.description}</p>
                   </div>
 
                   <div className="px-6 pb-6 mt-auto grid grid-cols-2 gap-3">
   {/* Call Now Button */}
   <Link
-    href={`tel:+919876543210`}
+    href={`tel:+919479365137`}
     className="inline-flex items-center justify-center bg-slate-100 border border-slate-200 text-slate-700 py-2.5 rounded-lg font-semibold hover:bg-slate-200 transition-all text-sm"
   >
     <Phone className="w-4 h-4 mr-2" />
@@ -71,7 +70,7 @@ export default function Services() {
     href={`/services/${service.id}`}
     className="inline-flex items-center justify-center bg-[#4CAF50] text-white py-2.5 rounded-lg font-semibold hover:bg-[#3e8e41] transition-all text-sm"
   >
-    Learn More
+    View More
     <ArrowRight className="ml-2 w-4 h-4" />
   </Link>
 </div>

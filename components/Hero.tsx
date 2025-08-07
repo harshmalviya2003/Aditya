@@ -6,11 +6,10 @@ import { Phone, Heart, Star } from 'lucide-react';
 
 const Hero = () => {
   const images = [
-    "/services/caretaker.jpg",
-    "/services/homenursing.jpg",
-    "/services/eldercare.jpg",
-    "/services/paralysicare.jpg",
-    "/services/physiotherapy.jpg"
+    "/hero/1.jpg",
+    "/hero/2.jpg",
+    "/hero/3.jpg",
+    "/hero/4.jpg",
   ];
 
   const testimonials = [
@@ -90,16 +89,17 @@ const Hero = () => {
                   <Phone className="w-6 h-6 text-[#4CAF50]" />
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500">Call Now For Home Care Assistance</div>
-                  <div className="text-xl font-bold text-[#007B8A]">+91 98765 43210</div>
+                  <div className="text-xs text-gray-500">Call Now For Home Care Service</div>
+                  <div className="text-xl font-bold text-[#007B8A]">+91 94793 65137</div>
                 </div>
               </div>
-              <Link
-                href="https://wa.me/+919876543210?text=Hello,%20I%20need%20Home%20care%20Service"
+              <a
+                href="tel:+919479365137"
                 className="inline-flex items-center justify-center bg-[#4CAF50] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3e8e41] transition-all duration-200 whitespace-nowrap text-base w-full sm:w-auto"
               >
                 Enquire Now
-              </Link>
+              </a>
+
             </div>
           </div>
         </div>

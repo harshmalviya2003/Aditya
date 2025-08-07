@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const FloatingWhatsAppButton = () => {
   // Replace with your WhatsApp number (include country code without '+' sign)
-  const whatsappNumber = '919876543210'; 
+  const whatsappNumber = '+919479365137'; 
   const whatsappMessage = 'Hello, I would like to inquire about your services';
 
   return (

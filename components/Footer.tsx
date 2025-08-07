@@ -119,7 +119,11 @@ const Footer = () => {
               </div>
               <a href="tel:+919876543210" className="flex items-center space-x-3 group">
                 <Phone size={16} className="text-[#A2E3E2] flex-shrink-0" />
-                <span className="text-sm text-slate-400 group-hover:text-white group-hover:underline">+91 98765 43210</span>
+                <span className="text-sm text-slate-400 group-hover:text-white group-hover:underline">+91-94793-65137</span>
+              </a>
+              <a href="tel:+919876543210" className="flex items-center space-x-3 group">
+                <Phone size={16} className="text-[#A2E3E2] flex-shrink-0" />
+                <span className="text-sm text-slate-400 group-hover:text-white group-hover:underline">+91-83192-26300</span>
               </a>
               <a href="mailto:info@florencenightingalecare.com" className="flex items-center space-x-3 group">
                 <Mail size={16} className="text-[#A2E3E2] flex-shrink-0" />

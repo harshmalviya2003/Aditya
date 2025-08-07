@@ -50,9 +50,12 @@ const Header = () => {
       <div className="bg-[#007B8A] text-white py-2 px-4 sm:px-6 lg:px-8 hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 gap-2">
               <Phone size={14} />
-              <span>+91 98765 43210</span>
+              <span>+91-9479365137</span>
+              <Phone size={14} />
+
+              <span>+91-8319226300</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail size={14} />
@@ -102,12 +105,15 @@ const Header = () => {
 
           {/* CTA Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-4">
-            <Link
-              href="/contact"
-              className="hidden md:inline-flex bg-[#4CAF50] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#3e8e41] transition-colors duration-200"
-            >
-              Get Free Consultation
-            </Link>
+          <a
+                    href="https://wa.me/+919479365137?text=Hello,%20I%20want%20to%20about%20your%20Services"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={toggleMenu}
+                    className="block w-full bg-[#4CAF50] text-white text-center px-6 py-3 rounded-lg font-medium hover:bg-[#3e8e41] transition-colors duration-200"
+                  >
+                    Get Free Consultation
+                  </a>
             
             {/* Mobile Menu Button */}
             <button

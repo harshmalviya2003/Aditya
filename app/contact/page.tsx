@@ -74,7 +74,12 @@ export default function Contact() {
                     <Phone className="w-6 h-6 text-[#007B8A] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Phone</h3>
-                      <a href="tel:+919876543210" className="text-gray-600 hover:text-[#007B8A] transition-colors">+91 98765 43210</a>
+                      <a href="tel:+919479365137" className="text-gray-600 hover:text-[#007B8A] transition-colors">+91-94793-65137</a>
+                    </div>
+                    <Phone className="w-6 h-6 text-[#007B8A] mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Phone</h3>
+                      <a href="tel:+918319226300" className="text-gray-600 hover:text-[#007B8A] transition-colors">+91 83192-26300</a>
                     </div>
                   </div>
                    <div className="flex items-start gap-4">

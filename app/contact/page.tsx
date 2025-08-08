@@ -156,21 +156,22 @@ Madhya Pradesh, India</p>
 
         {/* Map Section */}
         <section className="bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                 <div className="rounded-2xl overflow-hidden shadow-lg h-96">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.986687848657!2d75.8936983154275!3d22.72877963283733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd40c108937b%3A0x442f654b4239eabd!2sVijay%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1678886478901!5m2!1sen!2sin"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="Office Location"
-                    ></iframe>
-                 </div>
-            </div>
-        </section>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="rounded-2xl overflow-hidden shadow-lg h-96">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.7484961584926!2d75.84729247504197!3d22.73665352718057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396302787d8bfc5f%3A0x5bd4d36c4479f749!2sSilicon%20City%2C%20Indore%2C%20Madhya%20Pradesh%20452012!5e0!3m2!1sen!2sin!4v1691503436405!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Silicon City, Indore"
+            ></iframe>
+        </div>
+    </div>
+</section>
+
       </main>
       <Footer />
 

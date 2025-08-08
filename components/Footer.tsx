@@ -28,29 +28,32 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 text-slate-300">
       {/* Newsletter Section */}
-      <div className="bg-slate-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-white">Subscribe to Our Newsletter</h3>
-              <p className="mt-2 text-slate-400">Get the latest health tips, news, and updates directly in your inbox.</p>
-            </div>
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#007B8A]"
-              />
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center bg-[#007B8A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors duration-200"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
+      <div className="border-b rounded-sm border-white p-6 rounded-xs">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h3 className="text-2xl font-bold text-white">Need Immediate Assistance?</h3>
+        <p className="mt-2 text-white/90">
+          Our care team is available 24/7 to discuss your home healthcare needs
+        </p>
       </div>
+      <div className="flex flex-col sm:flex-row gap-3 items-center">
+        <a 
+          href="tel:+919479365137" 
+          className="w-full  sm:w-auto justify inline-flex items-center justify-center bg-white text-[#007B8A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+           +91 94793 65137
+        </a>
+        <p className="text-white/80 text-sm mt-2 sm:mt-0 sm:ml-4">
+          24/7 Emergency Support Available
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
       
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -59,12 +62,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-full overflow-hidden bg-white p-1">
-                <Image src="/logo/loh.png" alt="Logo" width={48} height={48} className="object-contain" />
+              <div className="w-12 h-12  overflow-hidden bg-white p-1">
+                <Image src="/logo/logo.png" alt="Logo" width={48} height={48} className="object-contain" />
               </div>
               <div>
-                <h3 className="text-lg font-bold leading-tight text-white">The Florence Nightingale</h3>
-                <p className="text-sm text-[#A2E3E2] font-medium">Home Care Agency</p>
+                <h3 className="text-lg font-bold leading-tight text-white"> Comfort Home Healthcare</h3>
+                <p className="text-sm text-[#A2E3E2] font-medium">Premium In-Home Care Services</p>
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
@@ -114,8 +117,9 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-[#A2E3E2] mt-1 flex-shrink-0" />
                 <address className="text-sm text-slate-400 not-italic">
-                  123 Medical Square, Vijay Nagar,<br/>Indore, Madhya Pradesh 452010
-                </address>
+                B-07, 704, Palash Parisar <br />
+Silicon City, Indore – 452012 <br />
+Madhya Pradesh, India                </address>
               </div>
               <a href="tel:+919876543210" className="flex items-center space-x-3 group">
                 <Phone size={16} className="text-[#A2E3E2] flex-shrink-0" />
@@ -125,9 +129,9 @@ const Footer = () => {
                 <Phone size={16} className="text-[#A2E3E2] flex-shrink-0" />
                 <span className="text-sm text-slate-400 group-hover:text-white group-hover:underline">+91-83192-26300</span>
               </a>
-              <a href="mailto:info@florencenightingalecare.com" className="flex items-center space-x-3 group">
+              <a href="mailto:comforthomehealthcaree@gmail.com" className="flex items-center space-x-3 group">
                 <Mail size={16} className="text-[#A2E3E2] flex-shrink-0" />
-                <span className="text-sm text-slate-400 group-hover:text-white group-hover:underline">info@florencenightingalecare.com</span>
+                <span className="text-sm text-slate-400 group-hover:text-white group-hover:underline">comforthomehealthcaree@gmail.com</span>
               </a>
             </div>
           </div>
@@ -139,7 +143,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
             <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <p className="text-xs text-slate-500 mb-4 md:mb-0">
-                    &copy; {currentYear} The Florence Nightingale Home Care Agency. All Rights Reserved.
+                    &copy; {currentYear} Comfort Home Health Care. All Rights Reserved.
                 </p>
                 <div className="flex space-x-4 text-xs">
                     <Link href="/privacy-policy" className="text-slate-500 hover:text-white">Privacy Policy</Link>

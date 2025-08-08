@@ -19,7 +19,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Effect to disable body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -54,12 +53,11 @@ const Header = () => {
               <Phone size={14} />
               <span>+91-9479365137</span>
               <Phone size={14} />
-
               <span>+91-8319226300</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail size={14} />
-              <span>info@florencenightingalecare.com</span>
+              <span>comforthomehealthcaree@gmail.com</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin size={14} />
@@ -75,16 +73,22 @@ const Header = () => {
         isScrolled ? 'bg-white shadow-lg' : 'bg-white'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3">
-          {/* Logo - Now responsive */}
+          {/* Logo Section - Visible on all screens */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0">
-              <img src="/logo/loh.png" alt="Logo" className="w-full h-full object-cover bg-[#FFF1DB]" />
+            <div className="w-14 h-14 md:w-18 md:h-18  overflow-hidden flex-shrink-0">
+              <img 
+                src="/logo/logo.png" 
+                alt="Comfort Home Healthcare Logo" 
+                className="w-full h-full object-cover "
+              />
             </div>
-            <div>
-              <h1 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">
-                  Comfort Health 
+            <div className=" sm:block">
+              <h1 className="text-lg md:text-xl font-bold text-gray-900 whitespace-nowrap">
+                Comfort <span className="text-[#007B8A]">Home Healthcare</span>
               </h1>
-              <p className="text-xs md:text-sm text-[#007B8A] font-medium">Home Care Services</p>
+              <p className="text-xs md:text-sm text-gray-800 font-medium mt-[-2px]">
+                Premium In-Home Care Services
+              </p>
             </div>
           </Link>
 
@@ -103,17 +107,18 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button & Mobile Menu Toggle */}
+          {/* CTA Button (Hidden on mobile) & Mobile Menu Toggle */}
           <div className="flex items-center space-x-4">
-          <a
-                    href="https://wa.me/+919479365137?text=Hello,%20I%20want%20to%20about%20your%20Services"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={toggleMenu}
-                    className="block w-full bg-[#4CAF50] text-white text-center px-6 py-3 rounded-lg font-medium hover:bg-[#3e8e41] transition-colors duration-200"
-                  >
-                    Get Free Consultation
-                  </a>
+            <div className="hidden md:block">
+              <a
+                href="https://wa.me/+919479365137?text=Hello,%20I%20want%20to%20about%20your%20Services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#4CAF50] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#3e8e41] transition-colors duration-200"
+              >
+                Get Free Consultation
+              </a>
+            </div>
             
             {/* Mobile Menu Button */}
             <button
@@ -141,15 +146,15 @@ const Header = () => {
                 {/* Mobile Menu Header - Consistent Logo */}
                 <div className="flex justify-between items-center mb-8">
                   <Link href="/" className="flex items-center space-x-2" onClick={toggleMenu}>
-                     <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                       <img src="/logo/loh.png" alt="Logo" className="w-full h-full object-cover" />
-                     </div>
-                     <div>
-                       <h1 className="font-bold text-gray-900 leading-tight">
-                         Florence Nightingale
-                       </h1>
-                       <p className="text-xs text-[#007B8A] font-medium">Home Care Agency</p>
-                     </div>
+                    <div className="w-10 h-10 overflow-hidden flex-shrink-0">
+                      <img src="/logo/logo.png" alt="Logo" className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h1 className=" text-sm font-bold text-gray-900 leading-tight">
+                        Comfort <span className='text-[#007B8A]'>Home Healthcare</span>
+                      </h1>
+                      <p className="text-xs text-black font-medium">Premium In-Home Care</p>
+                    </div>
                   </Link>
                   <button
                     onClick={toggleMenu}
@@ -177,21 +182,27 @@ const Header = () => {
                 
                 {/* Mobile Menu Footer */}
                 <div className="mt-8 pt-6 border-t border-gray-200">
-                  <Link
-                    href="/contact"
+                  <a
+                    href="https://wa.me/+919479365137?text=Hello,%20I%20want%20to%20about%20your%20Services"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={toggleMenu}
                     className="block w-full bg-[#4CAF50] text-white text-center px-6 py-3 rounded-lg font-medium hover:bg-[#3e8e41] transition-colors duration-200"
                   >
                     Get Free Consultation
-                  </Link>
+                  </a>
                   <div className="mt-6 space-y-3 text-sm text-gray-600">
                     <div className="flex items-center space-x-2">
                       <Phone size={16} className="text-gray-500" />
-                      <span>+91 98765 43210</span>
+                      <span>+91 94793 65137</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Phone size={16} className="text-gray-500" />
+                      <span>+91 83192 26300</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Mail size={16} className="text-gray-500" />
-                      <span>info@florencenightingalecare.com</span>
+                      <span>comforthomehealthcaree@gmail.com</span> 
                     </div>
                     <div className="flex items-center space-x-2">
                       <MapPin size={16} className="text-gray-500" />

@@ -86,14 +86,16 @@ export default function Contact() {
                     <Mail className="w-6 h-6 text-[#007B8A] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Email</h3>
-                      <a href="mailto:info@florencenightingalecare.com" className="text-gray-600 hover:text-[#007B8A] transition-colors">info@florencenightingalecare.com</a>
+                      <a href="mailto:comforthomehealthcaree@gmail.com" className="text-gray-600 hover:text-[#007B8A] transition-colors">comforthomehealthcaree@gmail.com</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <MapPin className="w-6 h-6 text-[#007B8A] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Address</h3>
-                      <p className="text-gray-600">123 Medical Square, Vijay Nagar, Indore, MP 452010</p>
+                      <p className="text-gray-600">B-07, Flat No. 704, Palash Parisar <br />
+Silicon City, Indore – 452012 <br />
+Madhya Pradesh, India</p>
                     </div>
                   </div>
                    <div className="flex items-start gap-4">

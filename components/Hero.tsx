@@ -58,7 +58,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 w-96 h-96 bg-cyan-200/50 rounded-full filter blur-2xl opacity-50"></div>
       <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-96 h-96 bg-teal-200/50 rounded-full filter blur-2xl opacity-50"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10 py-10 md:py-20">
+      <div className="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10 py-6 md:py-20">
         
         {/* Content */}
         <div className="space-y-6 text-center lg:text-left">
@@ -67,9 +67,9 @@ const Hero = () => {
               {[...Array(4)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
               ))}
-              <Star className="w-5 h-5 text-yellow-400 fill-current" style={{ clipPath: 'inset(0 50% 0 0)' }} />
+              <Star className="w-3 h-3 text-yellow-400 fill-current" style={{ clipPath: 'inset(0 50% 0 0)' }} />
             </div>
-            <span className="ml-2 text-base font-bold text-[#007B8A]">Trusted by 100+ Families for Quality Care</span>
+            <span className="ml-2 text-base font-bold text-[#007B8A]">Trusted by 100+ Families</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">

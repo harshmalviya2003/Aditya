@@ -15,7 +15,7 @@ const CTABanner = () => {
           
           {/* Content Section */}
           <div className="space-y-8">
-            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold leading-tight">
               Ready for Immediate, Compassionate Care?
             </h2>
             <p className="text-lg text-teal-100/90 leading-relaxed">

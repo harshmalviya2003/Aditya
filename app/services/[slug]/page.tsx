@@ -3,8 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/components/home/Header';
+import Footer from '@/components/home/Footer';
 import { getServiceById, services } from '@/data/services';
 import { Heart, Users, CheckCircle, Phone, Star, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -26,7 +26,6 @@ export default function ServicePage({ params }: ServicePageProps) {
 
   return (
     <div className="bg-white">
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="py-8 sm:py-24 bg-gradient-to-br from-teal-50 via-white to-white">
@@ -120,7 +119,6 @@ export default function ServicePage({ params }: ServicePageProps) {
         </section>
 
       </main>
-      <Footer />
     </div>
   );
 }

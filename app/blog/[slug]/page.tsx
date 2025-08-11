@@ -2,8 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/components/home/Header';
+import Footer from '@/components/home/Footer';
 import { getBlogById, blogs } from '@/data/blogs';
 import { Calendar, Clock, ArrowLeft, Twitter, Facebook, Linkedin, Phone } from 'lucide-react';
 import Image from 'next/image';
@@ -35,7 +35,6 @@ export default function BlogPage({ params }: BlogPageProps) {
 
   return (
     <div className="bg-white">
-      <Header />
       <main>
         <section className="py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,7 +147,6 @@ export default function BlogPage({ params }: BlogPageProps) {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

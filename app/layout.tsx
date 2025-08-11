@@ -30,6 +30,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://comforthomehealthcare.in',
   },
+  icons: {
+    icon: '/logo/logo.png',
+    shortcut: '/logo/logo.png',
+    apple: '/logo/logo.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 // Schema.org structured data for LocalBusiness

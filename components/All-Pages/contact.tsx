@@ -361,8 +361,6 @@ export default function Contact() {
         </section>
       </main>
 
-      <Footer />
-
       {/* Submission Confirmation Modal */}
       {isModalOpen && (
         <div

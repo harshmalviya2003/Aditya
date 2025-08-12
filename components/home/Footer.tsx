@@ -19,10 +19,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/comforthealthcare05/' },
     { name: 'Facebook', icon: Facebook, href: '#' },
-    { name: 'Twitter', icon: Twitter, href: '#' },
-    { name: 'Instagram', icon: Instagram, href: '#' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
   ];
 
   return (
@@ -61,15 +59,29 @@ const Footer = () => {
           
           {/* Company Info */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12  overflow-hidden bg-white p-1">
-                <Image src="/logo/logo.png" alt="Logo" width={48} height={48} className="object-contain" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold leading-tight text-white"> Comfort Home Healthcare</h3>
-                <p className="text-sm text-[#A2E3E2] font-medium">Premium In-Home Care Services</p>
-              </div>
-            </Link>
+          <Link href="/" className="flex items-center space-x-1">
+    {/* Logo Image */}
+    <div className="w-16 h-16 mt- md:mt-2 md:w-16 md:h-16 flex-shrink-0">
+      <img
+        src="/logo/logo.png"
+        alt="Comfort Home Healthcare Logo"
+        className="w-full h-full object-contain bg-white"
+      />
+    </div>
+
+    {/* Text Section */}
+    <div className="leading-tight">
+      <h1 className="text-[20px] md:text-[25px] font-extrabold text-[#007B8A]">
+        Comfort Home
+      </h1>
+      <h2 className="text-[20px] md:text-[25px] font-extrabold text-white -mt-1">
+        Healthcare
+      </h2>
+      <p className="text-[10px] md:text-[10px] font-semibold text-white-500">
+        Premium In <span className="text-[#007B8A] font-bold">Healthcare</span> Services
+      </p>
+    </div>
+  </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               Providing compassionate and professional home care services with a commitment to dignity and quality of life for every individual we serve.
             </p>
